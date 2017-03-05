@@ -1,0 +1,88 @@
+{
+  "cards": [
+    {
+      "type": "MOVIE",
+      "title": "Nüsse",
+      "description": "$3.99/lb",
+      "localImageResource": "food_01"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Undefinierbar",
+      "description": "$3.99/lb",
+      "localImageResource": "food_02"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Brocoli",
+      "description": "$3.99/lb",
+      "localImageResource": "food_03"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Salat",
+      "description": "$3.99/lb",
+      "localImageResource": "food_04"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Große Radischen",
+      "description": "$3.99/lb",
+      "localImageResource": "food_05"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Rote Zwiebeln",
+      "description": "$3.99/lb",
+      "localImageResource": "food_06"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Lauch",
+      "description": "$3.99/lb",
+      "localImageResource": "food_07"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Exotisches Zeugs",
+      "description": "$3.99/lb",
+      "localImageResource": "food_08"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Zitronen",
+      "description": "$3.99/lb",
+      "localImageResource": "food_09"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Meerirgendwas",
+      "description": "$3.99/lb",
+      "localImageResource": "food_10"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Irgendein Kohl",
+      "description": "$3.99/lb",
+      "localImageResource": "food_11"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Apfel",
+      "description": "$3.99/lb",
+      "localImageResource": "food_12"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Mehr Äpfel",
+      "description": "$3.99/lb",
+      "localImageResource": "food_13"
+    },
+    {
+      "type": "MOVIE",
+      "title": "Tomaten",
+      "description": "$3.99/lb",
+      "localImageResource": "food_14"
+    }
+  ]
+}

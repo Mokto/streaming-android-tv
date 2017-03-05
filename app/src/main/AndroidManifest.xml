@@ -1,0 +1,92 @@
+<manifest
+    package="android.support.v17.leanback.supportleanbackshowcase"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="23" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_banner_sample_app"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/Theme.Example.LeanbackLauncher">
+        <activity
+            android:name=".app.OldMainActivity"
+            android:exported="true"
+            android:icon="@mipmap/app_banner_sample_app"
+            android:label="@string/app_name"
+            android:logo="@mipmap/app_banner_sample_app"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".app.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
+
+        <activity
+                android:name=".app.oldpage.PageAndListRowActivity"
+                android:exported="true"
+                android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
+        <activity
+            android:name=".app.oldwizard.WizardExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.LeanbackWizard"/>
+        <activity
+            android:name=".app.oldsettings.SettingsExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.LeanbackPreferences"/>
+        <activity
+            android:name=".app.olddialog.DialogExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.LeanbackDialog"/>
+        <activity
+            android:name=".app.olddetails.DetailViewExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.LeanbackDetails"/>
+        <activity
+            android:name=".app.oldcards.CardExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.LeanbackBrowse"/>
+        <activity
+            android:name=".app.oldgrid.GridExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>
+        <activity
+            android:name=".app.oldgrid.VideoGridExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>
+        <activity
+            android:name=".app.oldmedia.VideoExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|layoutDirection"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            />
+        <activity
+            android:name=".app.oldmedia.MusicExampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.LeanbackMusic"/>
+
+        <service android:exported="false" android:name=".app.oldmedia.MusicPlaybackService"/>
+    </application>
+
+</manifest>
