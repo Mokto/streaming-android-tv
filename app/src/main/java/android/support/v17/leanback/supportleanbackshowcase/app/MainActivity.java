@@ -13,25 +13,16 @@ import android.support.v17.leanback.supportleanbackshowcase.app.search.SearchAct
 
 public class MainActivity extends Activity {
 
-    private BrowseFragment mBrowseFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_fragment);
-
-
-        mBrowseFragment = (BrowseFragment) getFragmentManager().findFragmentById(R.id.main_fragment);
-        mBrowseFragment.setSearchAffordanceColor(R.color.accent);
-
-
-
     }
-
-    @Override
-    public boolean onSearchRequested() {
-        startActivity(new Intent(this, SearchActivity.class));
-        return true;
-    }
+//
+//    @Override
+//    public boolean onSearchRequested() {
+//        startActivity(new Intent(this, SearchActivity.class));
+//        return true;
+//    }
 }
 

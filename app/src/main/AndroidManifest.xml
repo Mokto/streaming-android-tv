@@ -41,6 +41,20 @@
             android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
 
         <activity
+            android:name=".app.search.SearchActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
+
+
+
+
+
+
+
+
+
+
+        <activity
                 android:name=".old.oldapp.oldpage.PageAndListRowActivity"
                 android:exported="true"
                 android:theme="@style/Theme.Example.Leanback.CustomTitle"/>

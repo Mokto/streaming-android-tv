@@ -33,7 +33,6 @@ public class StreamingTVFragment extends RowsFragment {
 
     public StreamingTVFragment() {
         mRowsAdapter = new ArrayObjectAdapter(new ShadowRowPresenterSelector());
-
         setAdapter(mRowsAdapter);
         setOnItemViewClickedListener(new OnItemViewClickedListener() {
             @Override

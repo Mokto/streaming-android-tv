@@ -47,8 +47,7 @@ public class MainFragment extends BrowseFragment {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
         setBrandColor(getResources().getColor(R.color.primary_dark));
-
-
+//        setSearchAffordanceColor(getResources().getColor(R.color.accent));
 
 //        mBrowseFragment.setSearchAffordanceColor(getResources().getColor(R.color.primary_dark));
 //        SearchOrbView.Colors colors = new SearchOrbView.Colors(10, 10, 10);
@@ -60,9 +59,9 @@ public class MainFragment extends BrowseFragment {
 
             @Override
             public void onClick(View view) {
-                Log.d("Mokto", "Click search");
-                Intent intent = new Intent(getActivity(), SearchActivity.class);
-                startActivity(intent);
+            Log.d("Mokto", "Click search");
+            Intent intent = new Intent(getActivity(), SearchActivity.class);
+            startActivity(intent);
             }
         });
 

@@ -65,8 +65,8 @@ public class OldMainFragment extends BrowseFragment {
 
     private void loadMainPage() {
         Intent intent = new Intent(getActivity().getBaseContext(),
-                CardExampleActivity.class);
-                // MainActivity.class);
+                // CardExampleActivity.class);
+                MainActivity.class);
         if (intent != null) {
             getActivity().startActivityForResult(intent, 1);
         }
