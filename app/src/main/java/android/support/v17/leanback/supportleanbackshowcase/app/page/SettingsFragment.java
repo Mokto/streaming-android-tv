@@ -22,7 +22,7 @@ public class SettingsFragment extends RowsFragment {
 
     public SettingsFragment() {
         ListRowPresenter selector = new ListRowPresenter();
-        selector.setNumRows(1);
+        selector.setNumRows(2);
         mRowsAdapter = new ArrayObjectAdapter(selector);
         setAdapter(mRowsAdapter);
     }
@@ -43,6 +43,7 @@ public class SettingsFragment extends RowsFragment {
             String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.icon_example));
             CardRow cardRow = new Gson().fromJson(json, CardRow.class);
+            mRowsAdapter.add(createCardRow(cardRow));
             mRowsAdapter.add(createCardRow(cardRow));
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(
                     getMainFragmentAdapter());

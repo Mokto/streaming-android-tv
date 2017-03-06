@@ -39,7 +39,7 @@ public class StreamingFilmsFragment extends GridFragment {
         super.onCreate(savedInstanceState);
         setupAdapter();
         loadData();
-        getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+//        getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
     }
 
 

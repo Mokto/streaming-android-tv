@@ -11,6 +11,7 @@ import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.CardRo
 import android.support.v17.leanback.supportleanbackshowcase.utils.CardListRow;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
+import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.OnItemViewClickedListener;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
@@ -49,6 +50,7 @@ public class StreamingTVFragment extends RowsFragment {
                         .show();
             }
         });
+
     }
 
     private void getEmbeddableLink(String imdbId) {
@@ -122,6 +124,8 @@ public class StreamingTVFragment extends RowsFragment {
                 mRowsAdapter.add(cardRow2);
             }
         }
+
+//        mRowsAdapter.add(new CardListRow(new HeaderItem("Test"), null, (CardRow) new StreamingFilmsFragment());
     }
 
     private Row createCardRow(CardRow cardRow) {

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.app;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldapp;
 
 import android.app.Activity;
 import android.app.Fragment;

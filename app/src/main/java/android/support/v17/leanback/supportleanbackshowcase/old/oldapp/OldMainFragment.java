@@ -12,12 +12,13 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.app;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldapp;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v17.leanback.app.BrowseFragment;
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.supportleanbackshowcase.app.MainActivity;
 import android.support.v17.leanback.supportleanbackshowcase.old.oldapp.oldcards.CardExampleActivity;
 import android.support.v17.leanback.supportleanbackshowcase.old.oldapp.olddetails.DetailViewExampleActivity;
 import android.support.v17.leanback.supportleanbackshowcase.old.oldapp.olddialog.DialogExampleActivity;
@@ -64,8 +65,8 @@ public class OldMainFragment extends BrowseFragment {
 
     private void loadMainPage() {
         Intent intent = new Intent(getActivity().getBaseContext(),
-                // VideoExampleActivity.class);
-                MainActivity.class);
+                CardExampleActivity.class);
+                // MainActivity.class);
         if (intent != null) {
             getActivity().startActivityForResult(intent, 1);
         }

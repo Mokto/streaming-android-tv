@@ -16,6 +16,7 @@ package android.support.v17.leanback.supportleanbackshowcase.utils;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 
 import java.io.IOException;
@@ -54,5 +55,10 @@ public class Utils {
                                  context.getResources().getResourcePackageName(resID) + '/' +
                                  context.getResources().getResourceTypeName(resID) + '/' +
                                  context.getResources().getResourceEntryName(resID));
+    }
+
+    public static boolean hasPermission(final Context context, final String permission) {
+        return PackageManager.PERMISSION_GRANTED == context.getPackageManager().checkPermission(
+                permission, context.getPackageName());
     }
 }

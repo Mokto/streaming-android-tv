@@ -1,6 +1,7 @@
 package android.support.v17.leanback.supportleanbackshowcase.app;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v17.leanback.app.BackgroundManager;
@@ -9,13 +10,15 @@ import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.app.page.SettingsFragment;
 import android.support.v17.leanback.supportleanbackshowcase.app.page.StreamingFilmsFragment;
 import android.support.v17.leanback.supportleanbackshowcase.app.page.StreamingTVFragment;
+import android.support.v17.leanback.supportleanbackshowcase.app.search.SearchActivity;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.PageRow;
 import android.support.v17.leanback.widget.Row;
+import android.support.v17.leanback.widget.SearchOrbView;
+import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 
 public class MainFragment extends BrowseFragment {
@@ -43,15 +46,23 @@ public class MainFragment extends BrowseFragment {
     private void setupUi() {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
-        setBrandColor(getResources().getColor(R.color.fastlane_background));
-        setTitle("Welcome to Color 5815");
+        setBrandColor(getResources().getColor(R.color.primary_dark));
+
+
+
+//        mBrowseFragment.setSearchAffordanceColor(getResources().getColor(R.color.primary_dark));
+//        SearchOrbView.Colors colors = new SearchOrbView.Colors(10, 10, 10);
+//        setSearchAffordanceColors(colors);
+
+        setTitle("Welcome to Coloc 5815");
+
         setOnSearchClickedListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Toast.makeText(
-                        getActivity(), getString(R.string.implement_search), Toast.LENGTH_SHORT)
-                        .show();
+                Log.d("Mokto", "Click search");
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -14,6 +14,17 @@
   ~
   -->
 <resources>
+    <color name="primary">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#FF9800</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+
+
+
     <color name="background_gradient_start">#FFFFFF</color>
     <color name="background_gradient_end">#DDDDDD</color>
     <color name="fastlane_background">#3F51B5</color>
@@ -22,7 +33,7 @@
     <color name="search_color">#FFEB3B</color>
     <color name="search_bright_color">#FFEB3B</color>
     <color name="search_icon_color">#222222</color>
-    <color name="accent">#80D3FB</color>
+    <!--<color name="accent">#80D3FB</color>-->
     <color name="settings_background">#00695C</color>
 
     <color name="default_background">#3d3d3d</color>

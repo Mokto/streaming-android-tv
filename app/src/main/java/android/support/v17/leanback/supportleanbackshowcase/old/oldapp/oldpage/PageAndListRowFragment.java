@@ -90,7 +90,7 @@ public class PageAndListRowFragment extends BrowseFragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(
-                        getActivity(), getString(R.string.implement_search), Toast.LENGTH_SHORT)
+                        getActivity(), getString(R.string.implement_search)+"dazdazd", Toast.LENGTH_SHORT)
                         .show();
             }
         });

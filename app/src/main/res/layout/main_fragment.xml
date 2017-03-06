@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/page_list_fragment"
+        android:id="@+id/main_fragment"
         android:name="android.support.v17.leanback.supportleanbackshowcase.app.MainFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
