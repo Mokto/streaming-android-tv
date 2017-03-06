@@ -5,10 +5,10 @@ import android.support.v17.leanback.supportleanbackshowcase.api.Api;
 import android.support.v17.leanback.supportleanbackshowcase.app.oldpage.GridFragment;
 import android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters.CardPresenterSelector;
 import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Card;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.CardRow;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.FocusHighlight;
 import android.support.v17.leanback.widget.OnItemViewClickedListener;
+import android.support.v17.leanback.widget.OnItemViewSelectedListener;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
@@ -19,15 +19,21 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StreamingFilmsFragment extends GridFragment {
-    private static final int COLUMNS = 7;
+    private static final int COLUMNS = 6;
     private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_LARGE;
     private ArrayObjectAdapter mAdapter;
+//    private List<Card> cards = new ArrayList<>();
+    private Boolean isLoading = false;
+    private Integer page = 1;
+    private static Integer PER_PAGE = 30;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +45,7 @@ public class StreamingFilmsFragment extends GridFragment {
 
 
     private void setupAdapter() {
-        VerticalGridPresenter presenter = new VerticalGridPresenter(ZOOM_FACTOR);
+        VerticalGridPresenter presenter = new VerticalGridPresenter(ZOOM_FACTOR, false);
         presenter.setNumberOfColumns(COLUMNS);
         setGridPresenter(presenter);
 
@@ -60,24 +66,40 @@ public class StreamingFilmsFragment extends GridFragment {
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+        setOnItemViewSelectedListener(new OnItemViewSelectedListener() {
+            @Override
+            public void onItemSelected(
+                    Presenter.ViewHolder itemViewHolder,
+                    Object item,
+                    RowPresenter.ViewHolder rowViewHolder,
+                    Row row) {
+
+                Integer indexSelected = mAdapter.indexOf(item);
+                if (isLoading == false && (mAdapter.size() - indexSelected < PER_PAGE)) {
+                    loadData();
+                }
+            }
+
+        });
     }
 
     private void loadData() {
         Api api = new Api();
-        api.getTrending(this.getActivity().getBaseContext(),
+
+        this.isLoading = true;
+        api.getTrending(page, PER_PAGE, this.getActivity().getBaseContext(),
                 new Response.Listener<JSONArray>()
                 {
                     @Override
-                    public void onResponse(JSONArray r) {
-                        JSONObject row = new JSONObject();
-                        try {
-                            row.put("cards", r);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    public void onResponse(JSONArray response) {
 
-                        CardRow cardRow = new Gson().fromJson(row.toString(), CardRow.class);
-                        mAdapter.addAll(0, cardRow.getCards());
+                        isLoading = false;
+                        page++;
+
+                        List<Card> cards = new Gson().fromJson(response.toString(), new TypeToken<List<Card>>(){}.getType());
+
+                        mAdapter.addAll(mAdapter.size(), cards);
 
                         getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
                     }
@@ -86,8 +108,8 @@ public class StreamingFilmsFragment extends GridFragment {
                 {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-                        Log.e("Mokto", "SUCCESS" + error.toString());
+                        isLoading = false;
+                        Log.e("Mokto", error.toString());
                     }
                 });
 

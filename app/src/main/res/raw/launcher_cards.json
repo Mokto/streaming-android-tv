@@ -3,6 +3,13 @@
     "title": "",
     "cards": [
       {
+        "id": 10,
+        "type": "DEFAULT",
+        "title": "App",
+        "localImageResource": "thumbnail_example_cards",
+        "description": "Your app"
+      },
+      {
         "id": 0,
         "type": "DEFAULT",
         "title": "Card Examples",

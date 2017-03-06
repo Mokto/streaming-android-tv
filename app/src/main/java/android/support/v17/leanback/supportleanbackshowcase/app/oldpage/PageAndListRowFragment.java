@@ -212,7 +212,7 @@ public class PageAndListRowFragment extends BrowseFragment {
 
         public void getData() {
             Api api = new Api();
-            api.get(this.getActivity().getBaseContext(),
+            api.getMovies(this.getActivity().getBaseContext(),
                     new Response.Listener<JSONArray>()
                     {
                         @Override
@@ -314,7 +314,7 @@ public class PageAndListRowFragment extends BrowseFragment {
 
         private void loadData() {
             Api api = new Api();
-            api.getTrending(this.getActivity().getBaseContext(),
+            api.getTrending(1, 28, this.getActivity().getBaseContext(),
                     new Response.Listener<JSONArray>()
                     {
                         @Override

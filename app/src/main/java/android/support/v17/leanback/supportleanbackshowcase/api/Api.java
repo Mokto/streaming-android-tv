@@ -19,22 +19,28 @@ import java.util.Map;
  */
 
 public class Api {
-    public void get(Context context, Response.Listener<JSONArray> responseListener, Response.ErrorListener errorListener) {
-        // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(context);
-        String url ="http://192.168.1.103:3000/movies";
 
-        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, url, null, responseListener, errorListener);
+    private String baseUrl = "http://192.168.1.103:3000";
 
-        // Add the request to the RequestQueue.
-        queue.add(getRequest);
+    public void getMovies(Context context, Response.Listener<JSONArray> responseListener, Response.ErrorListener errorListener) {
+
+        this.get("/movies", context, responseListener, errorListener);
+
     }
 
-    public void getTrending(Context context, Response.Listener<JSONArray> responseListener, Response.ErrorListener errorListener) {
-        RequestQueue queue = Volley.newRequestQueue(context);
-        String url ="http://192.168.1.103:3000/movies/trending/1/28";
+    public void getTrending(Integer page, Integer limit, Context context, Response.Listener<JSONArray> responseListener, Response.ErrorListener errorListener) {
 
-        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, url, null, responseListener, errorListener);
+        this.get("/movies/trending/" + page + "/" + limit, context, responseListener, errorListener);
+
+    }
+
+
+
+
+    private void get(String path, Context context , Response.Listener<JSONArray> responseListener, Response.ErrorListener errorListener) {
+        RequestQueue queue = Volley.newRequestQueue(context);
+
+        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, this.baseUrl + path, null, responseListener, errorListener);
 
         // Add the request to the RequestQueue.
         queue.add(getRequest);

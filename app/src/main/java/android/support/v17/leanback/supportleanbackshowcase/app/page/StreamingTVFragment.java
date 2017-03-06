@@ -85,7 +85,7 @@ public class StreamingTVFragment extends RowsFragment {
 
     public void getData() {
         Api api = new Api();
-        api.get(this.getActivity().getBaseContext(),
+        api.getMovies(this.getActivity().getBaseContext(),
                 new Response.Listener<JSONArray>()
                 {
                     @Override
