@@ -12,7 +12,7 @@
  *  the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.oldmodels;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldmodels;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;

@@ -17,7 +17,7 @@ package android.support.v17.leanback.supportleanbackshowcase.app.olddetails;
 
 import android.content.Context;
 import android.support.v17.leanback.supportleanbackshowcase.R;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.DetailedCard;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.DetailedCard;
 import android.support.v17.leanback.supportleanbackshowcase.utils.ResourceCache;
 import android.support.v17.leanback.widget.Presenter;
 import android.view.LayoutInflater;

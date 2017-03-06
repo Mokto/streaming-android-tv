@@ -12,13 +12,13 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.oldcards;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldcards;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v17.leanback.supportleanbackshowcase.R;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Card;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;

@@ -3,8 +3,8 @@ package android.support.v17.leanback.supportleanbackshowcase.app.page;
 import android.os.Bundle;
 import android.support.v17.leanback.supportleanbackshowcase.api.Api;
 import android.support.v17.leanback.supportleanbackshowcase.app.oldpage.GridFragment;
-import android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters.CardPresenterSelector;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Card;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters.CardPresenterSelector;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.FocusHighlight;
 import android.support.v17.leanback.widget.OnItemViewClickedListener;
@@ -23,7 +23,6 @@ import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StreamingFilmsFragment extends GridFragment {

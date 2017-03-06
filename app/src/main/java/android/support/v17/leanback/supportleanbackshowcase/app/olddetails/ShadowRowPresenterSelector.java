@@ -15,7 +15,7 @@
 
 package android.support.v17.leanback.supportleanbackshowcase.app.olddetails;
 
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.CardRow;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.CardRow;
 import android.support.v17.leanback.supportleanbackshowcase.utils.CardListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.Presenter;

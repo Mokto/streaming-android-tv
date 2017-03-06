@@ -12,11 +12,11 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters;
 
 import android.content.Context;
-import android.support.v17.leanback.supportleanbackshowcase.oldcards.CharacterCardView;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Card;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldcards.CharacterCardView;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
 
 /**
  * This Presenter is used to display the characters card row in the DetailView examples.

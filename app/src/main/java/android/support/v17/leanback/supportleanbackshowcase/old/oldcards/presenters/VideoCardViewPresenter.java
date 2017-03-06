@@ -12,11 +12,11 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters;
 
 import android.content.Context;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Card;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.VideoCard;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.VideoCard;
 import android.support.v17.leanback.widget.ImageCardView;
 
 import com.bumptech.glide.Glide;

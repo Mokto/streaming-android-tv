@@ -28,10 +28,10 @@ import android.support.v17.leanback.supportleanbackshowcase.app.oldmedia.VideoEx
 import android.support.v17.leanback.supportleanbackshowcase.app.oldpage.PageAndListRowActivity;
 import android.support.v17.leanback.supportleanbackshowcase.app.oldsettings.SettingsExampleActivity;
 import android.support.v17.leanback.supportleanbackshowcase.app.oldwizard.WizardExampleActivity;
-import android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters.CardPresenterSelector;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Card;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.CardRow;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Movie;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters.CardPresenterSelector;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.CardRow;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Movie;
 import android.support.v17.leanback.supportleanbackshowcase.utils.Utils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ListRow;
@@ -43,8 +43,6 @@ import android.support.v17.leanback.widget.PresenterSelector;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v4.app.ActivityOptionsCompat;
-
-import android.support.v17.leanback.supportleanbackshowcase.app.MainActivity;
 
 import com.google.gson.Gson;
 

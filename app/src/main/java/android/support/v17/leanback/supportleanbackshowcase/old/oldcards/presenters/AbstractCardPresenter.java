@@ -11,10 +11,10 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters;
 
 import android.content.Context;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Card;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v17.leanback.widget.Presenter;
 import android.view.ViewGroup;

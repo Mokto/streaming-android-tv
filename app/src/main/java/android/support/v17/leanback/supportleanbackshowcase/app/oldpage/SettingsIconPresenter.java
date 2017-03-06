@@ -16,7 +16,7 @@ package android.support.v17.leanback.supportleanbackshowcase.app.oldpage;
 
 import android.content.Context;
 import android.support.v17.leanback.supportleanbackshowcase.R;
-import android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters.ImageCardViewPresenter;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters.ImageCardViewPresenter;
 import android.support.v17.leanback.widget.ImageCardView;
 import android.view.View;
 

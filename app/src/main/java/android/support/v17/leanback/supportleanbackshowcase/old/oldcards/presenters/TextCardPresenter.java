@@ -12,11 +12,11 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.oldcards.presenters;
+package android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters;
 
 import android.content.Context;
-import android.support.v17.leanback.supportleanbackshowcase.oldcards.TextCardView;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Card;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldcards.TextCardView;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
 
 /**
  * The Presenter displays a card consisting of text as a replacement for a big image. The footer is

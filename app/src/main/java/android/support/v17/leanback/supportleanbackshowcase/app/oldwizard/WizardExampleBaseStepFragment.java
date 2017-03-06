@@ -16,7 +16,7 @@ package android.support.v17.leanback.supportleanbackshowcase.app.oldwizard;
 
 import android.os.Bundle;
 import android.support.v17.leanback.app.GuidedStepFragment;
-import android.support.v17.leanback.supportleanbackshowcase.oldmodels.Movie;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Movie;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 
 /**
