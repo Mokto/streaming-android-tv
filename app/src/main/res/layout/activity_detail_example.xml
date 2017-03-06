@@ -19,7 +19,7 @@
                 android:layout_height="match_parent">
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="android.support.v17.leanback.supportleanbackshowcase.app.olddetails.DetailViewExampleFragment"
+        android:name="android.support.v17.leanback.supportleanbackshowcase.old.oldapp.olddetails.DetailViewExampleFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></fragment>
 </RelativeLayout>

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Handler;
 import android.support.v17.leanback.app.RowsFragment;
 import android.support.v17.leanback.supportleanbackshowcase.R;
-import android.support.v17.leanback.supportleanbackshowcase.app.oldpage.SettingsIconPresenter;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldapp.oldpage.SettingsIconPresenter;
 import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
 import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.CardRow;
 import android.support.v17.leanback.supportleanbackshowcase.utils.CardListRow;

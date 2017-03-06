@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/cardsFragment"
-        android:name="android.support.v17.leanback.supportleanbackshowcase.app.oldgrid.VideoGridExampleFragment"
+        android:name="android.support.v17.leanback.supportleanbackshowcase.old.oldapp.oldgrid.VideoGridExampleFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></fragment>
 </RelativeLayout>

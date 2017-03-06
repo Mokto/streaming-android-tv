@@ -41,39 +41,39 @@
             android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
 
         <activity
-                android:name=".app.oldpage.PageAndListRowActivity"
+                android:name=".old.oldapp.oldpage.PageAndListRowActivity"
                 android:exported="true"
                 android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
         <activity
-            android:name=".app.oldwizard.WizardExampleActivity"
+            android:name=".old.oldapp.oldwizard.WizardExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackWizard"/>
         <activity
-            android:name=".app.oldsettings.SettingsExampleActivity"
+            android:name=".old.oldapp.oldsettings.SettingsExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackPreferences"/>
         <activity
-            android:name=".app.olddialog.DialogExampleActivity"
+            android:name=".old.oldapp.olddialog.DialogExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackDialog"/>
         <activity
-            android:name=".app.olddetails.DetailViewExampleActivity"
+            android:name=".old.oldapp.olddetails.DetailViewExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackDetails"/>
         <activity
-            android:name=".app.oldcards.CardExampleActivity"
+            android:name=".old.oldapp.oldcards.CardExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackBrowse"/>
         <activity
-            android:name=".app.oldgrid.GridExampleActivity"
+            android:name=".old.oldapp.oldgrid.GridExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>
         <activity
-            android:name=".app.oldgrid.VideoGridExampleActivity"
+            android:name=".old.oldapp.oldgrid.VideoGridExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>
         <activity
-            android:name=".app.oldmedia.VideoExampleActivity"
+            android:name=".old.oldapp.oldmedia.VideoExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|layoutDirection"
@@ -82,11 +82,11 @@
             android:supportsPictureInPicture="true"
             />
         <activity
-            android:name=".app.oldmedia.MusicExampleActivity"
+            android:name=".old.oldapp.oldmedia.MusicExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackMusic"/>
 
-        <service android:exported="false" android:name=".app.oldmedia.MusicPlaybackService"/>
+        <service android:exported="false" android:name=".old.oldapp.oldmedia.MusicPlaybackService"/>
     </application>
 
 </manifest>

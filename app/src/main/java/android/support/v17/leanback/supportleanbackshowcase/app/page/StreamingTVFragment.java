@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v17.leanback.app.RowsFragment;
 import android.support.v17.leanback.supportleanbackshowcase.api.Api;
 import android.support.v17.leanback.supportleanbackshowcase.api.VidSourceApi;
-import android.support.v17.leanback.supportleanbackshowcase.app.olddetails.ShadowRowPresenterSelector;
+import android.support.v17.leanback.supportleanbackshowcase.old.oldapp.olddetails.ShadowRowPresenterSelector;
 import android.support.v17.leanback.supportleanbackshowcase.old.oldcards.presenters.CardPresenterSelector;
 import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.Card;
 import android.support.v17.leanback.supportleanbackshowcase.old.oldmodels.CardRow;
