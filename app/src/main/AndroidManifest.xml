@@ -21,7 +21,7 @@
         android:largeHeap="true"
         android:theme="@style/Theme.Example.LeanbackLauncher">
         <activity
-            android:name=".app.OldMainActivity"
+            android:name=".old.oldapp.OldMainActivity"
             android:exported="true"
             android:icon="@mipmap/app_banner_sample_app"
             android:label="@string/app_name"
