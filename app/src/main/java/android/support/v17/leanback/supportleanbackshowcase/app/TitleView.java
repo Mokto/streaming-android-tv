@@ -12,7 +12,7 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.old.oldapp.oldpage;
+package android.support.v17.leanback.supportleanbackshowcase.app;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -29,7 +29,7 @@ import android.widget.TextView;
 /**
  * Custom title view to be used in {@link android.support.v17.leanback.app.BrowseFragment}.
  */
-public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.Provider {
+public class TitleView extends RelativeLayout implements TitleViewAdapter.Provider {
     private final TextView mTitleView;
     private final View mAnalogClockView;
     private final View mSearchOrbView;
@@ -42,7 +42,7 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
 
         @Override
         public void setTitle(CharSequence titleText) {
-            CustomTitleView.this.setTitle(titleText);
+            TitleView.this.setTitle(titleText);
         }
 //
 //        @Override
@@ -70,15 +70,15 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
         }
     };
 
-    public CustomTitleView(Context context) {
+    public TitleView(Context context) {
         this(context, null);
     }
 
-    public CustomTitleView(Context context, AttributeSet attrs) {
+    public TitleView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CustomTitleView(Context context, AttributeSet attrs, int defStyle) {
+    public TitleView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         View root  = LayoutInflater.from(context).inflate(R.layout.custom_titleview, this);
         mTitleView = (TextView) root.findViewById(R.id.title_tv);

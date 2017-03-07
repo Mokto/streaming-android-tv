@@ -47,7 +47,7 @@ public class MainFragment extends BrowseFragment {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
         setBrandColor(getResources().getColor(R.color.primary_dark));
-//        setSearchAffordanceColor(getResources().getColor(R.color.accent));
+        setSearchAffordanceColors(new SearchOrbView.Colors(getResources().getColor(R.color.accent)));
 
 //        mBrowseFragment.setSearchAffordanceColor(getResources().getColor(R.color.primary_dark));
 //        SearchOrbView.Colors colors = new SearchOrbView.Colors(10, 10, 10);
