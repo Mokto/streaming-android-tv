@@ -30,7 +30,7 @@ public class CardPresenterSelector extends PresenterSelector {
             Log.w("Mokto", card.toString());
             switch (card.getType()) {
                 case SINGLE_LINE:
-                    presenter = new SingleLineCardPresenter(mContext);
+                    presenter = new SingleLineCardPresenter(mContext, R.style.SingleLineCardTheme);
                     break;
 //                case VIDEO_GRID:
 //                    presenter = new OldVideoCardViewPresenterOldOld(mContext, R.style.VideoGridCardTheme);

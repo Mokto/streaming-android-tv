@@ -7,7 +7,7 @@
         "type": "SINGLE_LINE",
         "title": "Trending",
         "footerColor": "#dd004e",
-        "localImageResource": "test"
+        "localImageResource": "category_action"
       },
       {
         "id": "animation",
