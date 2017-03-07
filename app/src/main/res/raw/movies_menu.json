@@ -3,46 +3,149 @@
     "title": "Streaming lists",
     "cards": [
       {
+        "id": "trending",
         "type": "SINGLE_LINE",
         "title": "Trending",
         "footerColor": "#dd004e",
-        "localImageResource": "category_action"
+        "localImageResource": "test"
       },
       {
+        "id": "animation",
         "type": "SINGLE_LINE",
-        "title": "Animation",
+        "title": "Popular (All time)",
         "footerColor": "#c51162",
         "localImageResource": "category_animation"
       },
       {
+        "id": "adventure",
         "type": "SINGLE_LINE",
-        "title": "Classics",
+        "title": "Watched (last 7 days)",
         "footerColor": "#9c27b0",
         "localImageResource": "category_classics"
       },
       {
+        "id": "comedy",
         "type": "SINGLE_LINE",
-        "title": "Comedy",
+        "title": "Box office",
         "footerColor": "#cf4900",
         "localImageResource": "category_comedy"
       },
       {
+        "id": "crime",
         "type": "SINGLE_LINE",
         "title": "Crime",
         "footerColor": "#3f51b5",
         "localImageResource": "category_crime"
       },
       {
+        "id": "documentary",
         "type": "SINGLE_LINE",
         "title": "Documentary",
         "footerColor": "#02639b",
         "localImageResource": "category_documentary"
       },
       {
+        "id": "drama",
         "type": "SINGLE_LINE",
         "title": "Drama",
         "footerColor": "#2a56c6",
         "localImageResource": "category_drama"
+      },
+      {
+        "id": "anime",
+        "type": "SINGLE_LINE",
+        "title": "Anime",
+        "footerColor": "#333333",
+        "localImageResource": "category_classics"
+      },
+      {
+        "id": "disaster",
+        "type": "SINGLE_LINE",
+        "title": "Disaster",
+        "footerColor": "#333333",
+        "localImageResource": "category_classics"
+      },
+      {
+        "id": "eastern",
+        "type": "SINGLE_LINE",
+        "title": "Eastern",
+        "footerColor": "#333333",
+        "localImageResource": "category_classics"
+      }
+    ]
+  },
+  {
+    "title": "Streaming lists",
+    "cards": [
+      {
+        "id": "action",
+        "type": "SINGLE_LINE",
+        "title": "Action",
+        "footerColor": "#dd004e",
+        "localImageResource": "category_action"
+      },
+      {
+        "id": "animation",
+        "type": "SINGLE_LINE",
+        "title": "Animation",
+        "footerColor": "#c51162",
+        "localImageResource": "category_animation"
+      },
+      {
+        "id": "adventure",
+        "type": "SINGLE_LINE",
+        "title": "Adventure",
+        "footerColor": "#9c27b0",
+        "localImageResource": "category_classics"
+      },
+      {
+        "id": "comedy",
+        "type": "SINGLE_LINE",
+        "title": "Comedy",
+        "footerColor": "#cf4900",
+        "localImageResource": "category_comedy"
+      },
+      {
+        "id": "crime",
+        "type": "SINGLE_LINE",
+        "title": "Crime",
+        "footerColor": "#3f51b5",
+        "localImageResource": "category_crime"
+      },
+      {
+        "id": "documentary",
+        "type": "SINGLE_LINE",
+        "title": "Documentary",
+        "footerColor": "#02639b",
+        "localImageResource": "category_documentary"
+      },
+      {
+        "id": "drama",
+        "type": "SINGLE_LINE",
+        "title": "Drama",
+        "footerColor": "#2a56c6",
+        "localImageResource": "category_drama"
+      },
+      {
+        "id": "anime",
+        "type": "SINGLE_LINE",
+        "title": "Anime",
+        "footerColor": "#333333",
+        "localImageResource": "category_classics"
+      },
+      {
+        "id": "disaster",
+        "type": "SINGLE_LINE",
+        "title": "Disaster",
+        "footerColor": "#333333",
+        "localImageResource": "category_classics"
+      },
+      {
+        "id": "eastern",
+        "type": "SINGLE_LINE",
+        "title": "Eastern",
+        "footerColor": "#333333",
+        "localImageResource": "category_classics"
       }
     ]
   }

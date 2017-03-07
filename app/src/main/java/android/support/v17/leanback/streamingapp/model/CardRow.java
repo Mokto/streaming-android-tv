@@ -7,8 +7,17 @@ import java.util.List;
 public class CardRow {
 
     @SerializedName("shadow") private boolean shadow = true;
+    @SerializedName("id") private String id;
     @SerializedName("title") private String title;
     @SerializedName("cards") private List<Card> cards;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public boolean useShadow() {
         return shadow;

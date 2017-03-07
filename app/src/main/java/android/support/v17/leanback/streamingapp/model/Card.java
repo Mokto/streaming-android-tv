@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class Card {
-    @SerializedName("id") private int id;
+    @SerializedName("id") private String id;
     @SerializedName("type") private Card.Type type;
     @SerializedName("title") private String title = "";
     @SerializedName("subtitle") private String subtitle = "";
@@ -16,26 +16,14 @@ public class Card {
 
     public enum Type {
         SINGLE_LINE,
+        SINGLE_LINE_CENTERED,
     }
 
-    @Override
-    public String toString() {
-        return "Card{" +
-                "id=" + id +
-                ", type=" + type +
-                ", title='" + title + '\'' +
-                ", subtitle='" + subtitle + '\'' +
-                ", localImageResource='" + localImageResource + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", footerColor='" + footerColor + '\'' +
-                '}';
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
