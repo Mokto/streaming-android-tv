@@ -1,5 +1,5 @@
 <manifest
-    package="android.support.v17.leanback.supportleanbackshowcase"
+    package="android.support.v17.leanback.streamingapp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="23" />
@@ -21,7 +21,7 @@
         android:largeHeap="true"
         android:theme="@style/Theme.Example.LeanbackLauncher">
         <activity
-            android:name=".old.oldapp.OldMainActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.OldMainActivity"
             android:exported="true"
             android:icon="@mipmap/app_banner_sample_app"
             android:label="@string/app_name"
@@ -36,12 +36,12 @@
 
 
         <activity
-            android:name=".app.MainActivity"
+            android:name="android.support.v17.leanback.streamingapp.app.BrowseActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
 
         <activity
-            android:name=".app.search.SearchActivity"
+            android:name="android.support.v17.leanback.streamingapp.app.search.SearchActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
 
@@ -55,39 +55,39 @@
 
 
         <activity
-                android:name=".old.oldapp.oldpage.PageAndListRowActivity"
+                android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldpage.PageAndListRowActivity"
                 android:exported="true"
                 android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
         <activity
-            android:name=".old.oldapp.oldwizard.WizardExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldwizard.WizardExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackWizard"/>
         <activity
-            android:name=".old.oldapp.oldsettings.SettingsExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldsettings.SettingsExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackPreferences"/>
         <activity
-            android:name=".old.oldapp.olddialog.DialogExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.olddialog.DialogExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackDialog"/>
         <activity
-            android:name=".old.oldapp.olddetails.DetailViewExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.olddetails.DetailViewExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackDetails"/>
         <activity
-            android:name=".old.oldapp.oldcards.CardExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldcards.CardExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackBrowse"/>
         <activity
-            android:name=".old.oldapp.oldgrid.GridExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldgrid.GridExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>
         <activity
-            android:name=".old.oldapp.oldgrid.VideoGridExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldgrid.VideoGridExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>
         <activity
-            android:name=".old.oldapp.oldmedia.VideoExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.VideoExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|layoutDirection"
@@ -96,11 +96,11 @@
             android:supportsPictureInPicture="true"
             />
         <activity
-            android:name=".old.oldapp.oldmedia.MusicExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.MusicExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackMusic"/>
 
-        <service android:exported="false" android:name=".old.oldapp.oldmedia.MusicPlaybackService"/>
+        <service android:exported="false" android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.MusicPlaybackService"/>
     </application>
 
 </manifest>

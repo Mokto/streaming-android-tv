@@ -35,7 +35,7 @@
     </style>
 
     <style name="Theme.Example.Leanback.CustomTitle" parent="Theme.Example.LeanbackBrowse">
-        <item name="browseTitleViewLayout">@layout/titleview</item>
+        <item name="browseTitleViewLayout">@layout/browser_title_view</item>
         <item name="browseRowsMarginTop">120dp</item>
     </style>
 
