@@ -17,7 +17,7 @@ package android.support.v17.leanback.streamingapp.old.oldcards.presenters;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.ImageCardView;
 
 /**
@@ -25,17 +25,17 @@ import android.support.v17.leanback.widget.ImageCardView;
  * Not only the colored footer is unique to this card, but also it's footer (info) will be visible
  * even when its parent row is inactive.
  */
-public class SingleLineCardPresenter extends ImageCardViewPresenter {
+public class OldSingleLineCardPresenterOldOld extends OldImageCardViewPresenterOld {
 
-    public SingleLineCardPresenter(Context context) {
+    public OldSingleLineCardPresenterOldOld(Context context) {
         super(context, R.style.SingleLineCardTheme);
     }
 
-    @Override public void onBindViewHolder(Card card, ImageCardView cardView) {
-        super.onBindViewHolder(card, cardView);
+    @Override public void onBindViewHolder(OldCard oldCard, ImageCardView cardView) {
+        super.onBindViewHolder(oldCard, cardView);
         TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(R.styleable.lbImageCardView);
         android.util.Log.d("SHAAN", "lbImageCardViewType ="+typedArray.getInt(R.styleable.lbImageCardView_lbImageCardViewType, -1));
-        cardView.setInfoAreaBackgroundColor(card.getFooterColor());
+        cardView.setInfoAreaBackgroundColor(oldCard.getFooterColor());
     }
 
 }

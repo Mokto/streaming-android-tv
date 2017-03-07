@@ -17,7 +17,7 @@ package android.support.v17.leanback.streamingapp.old.oldapp.olddetails;
 
 import android.content.Context;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.old.oldmodels.DetailedCard;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldDetailedCard;
 import android.support.v17.leanback.streamingapp.utils.ResourceCache;
 import android.support.v17.leanback.widget.Presenter;
 import android.view.LayoutInflater;
@@ -26,15 +26,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
- * This presenter is used to render a {@link DetailedCard} in the {@link
- * DetailViewExampleFragment}.
+ * This presenter is used to render a {@link OldDetailedCard} in the {@link
+ * OldDetailViewExampleFragment}.
  */
-public class DetailsDescriptionPresenter extends Presenter {
+public class OldDetailsDescriptionPresenter extends Presenter {
 
     private ResourceCache mResourceCache = new ResourceCache();
     private Context mContext;
 
-    public DetailsDescriptionPresenter(Context context) {
+    public OldDetailsDescriptionPresenter(Context context) {
         mContext = context;
     }
 
@@ -49,7 +49,7 @@ public class DetailsDescriptionPresenter extends Presenter {
         TextView sndText2 = mResourceCache.getViewById(viewHolder.view, R.id.secondary_text_second);
         TextView extraText = mResourceCache.getViewById(viewHolder.view, R.id.extra_text);
 
-        DetailedCard card = (DetailedCard) item;
+        OldDetailedCard card = (OldDetailedCard) item;
         primaryText.setText(card.getTitle());
         sndText1.setText(card.getDescription());
         sndText2.setText(card.getYear() + "");

@@ -23,13 +23,13 @@ import android.support.v17.leanback.streamingapp.R;
  * The video card data structure used to hold the fields of each video card fetched from the
  * url: {@link R.string.videos_url}
  */
-public class VideoCard extends Card {
+public class OldVideoCard extends OldCard {
 
     @SerializedName("sources") private String mVideoSource = "";
     @SerializedName("background") private String mBackgroundUrl = "";
     @SerializedName("studio") private String mStudio = "";
 
-    public VideoCard() {
+    public OldVideoCard() {
         super();
         setType(Type.VIDEO_GRID);
     }

@@ -22,7 +22,7 @@ import android.support.v17.leanback.streamingapp.R;
 /**
  * Contains a {@link DetailsFragment} in order to display more details for a given card.
  */
-public class DetailViewExampleActivity extends Activity {
+public class OldDetailViewExampleActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

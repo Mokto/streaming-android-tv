@@ -24,9 +24,9 @@ import java.util.List;
  * This class represents a row of Video cards fetched from the
  * url: {@link R.string.videos_url}
  */
-public class VideoRow {
+public class OldVideoRow {
     @SerializedName("category") private String mCategory = "";
-    @SerializedName("videos") private List<VideoCard> mVideos;
+    @SerializedName("videos") private List<OldVideoCard> mVideos;
 
     public String getCategory() {
         return mCategory;
@@ -36,11 +36,11 @@ public class VideoRow {
         mCategory = category;
     }
 
-    public List<VideoCard> getVideos() {
+    public List<OldVideoCard> getVideos() {
         return mVideos;
     }
 
-    public void setVideos(List<VideoCard> videos) {
+    public void setVideos(List<OldVideoCard> videos) {
         mVideos = videos;
     }
 }

@@ -16,7 +16,7 @@ package android.support.v17.leanback.streamingapp.old.oldcards.presenters;
 
 import android.content.Context;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
@@ -30,9 +30,9 @@ import com.squareup.picasso.Picasso;
  * box, thus it will be hidden if the parent row is inactive. This behavior is unique to this card
  * and requires a special focus handler.
  */
-public class SideInfoCardPresenter extends AbstractCardPresenter<BaseCardView> {
+public class OldSideInfoCardPresenterOld extends OldAbstractCardPresenter<BaseCardView> {
 
-    public SideInfoCardPresenter(Context context) {
+    public OldSideInfoCardPresenterOld(Context context) {
         super(context);
     }
 
@@ -46,28 +46,28 @@ public class SideInfoCardPresenter extends AbstractCardPresenter<BaseCardView> {
     }
 
     @Override
-    public void onBindViewHolder(Card card, BaseCardView cardView) {
+    public void onBindViewHolder(OldCard oldCard, BaseCardView cardView) {
         ImageView imageView = (ImageView) cardView.findViewById(R.id.main_image);
-        if (card.getLocalImageResourceName() != null) {
+        if (oldCard.getLocalImageResourceName() != null) {
             int width = (int) getContext().getResources()
                     .getDimension(R.dimen.sidetext_image_card_width);
             int height = (int) getContext().getResources()
                     .getDimension(R.dimen.sidetext_image_card_height);
             int resourceId = getContext().getResources()
-                    .getIdentifier(card.getLocalImageResourceName(),
+                    .getIdentifier(oldCard.getLocalImageResourceName(),
                             "drawable", getContext().getPackageName());
             Picasso.with(getContext()).load(resourceId).resize(width, height).centerCrop()
                     .into(imageView);
         }
 
         TextView primaryText = (TextView) cardView.findViewById(R.id.primary_text);
-        primaryText.setText(card.getTitle());
+        primaryText.setText(oldCard.getTitle());
 
         TextView secondaryText = (TextView) cardView.findViewById(R.id.secondary_text);
-        secondaryText.setText(card.getDescription());
+        secondaryText.setText(oldCard.getDescription());
 
         TextView extraText = (TextView) cardView.findViewById(R.id.extra_text);
-        extraText.setText(card.getExtraText());
+        extraText.setText(oldCard.getExtraText());
     }
 
 }

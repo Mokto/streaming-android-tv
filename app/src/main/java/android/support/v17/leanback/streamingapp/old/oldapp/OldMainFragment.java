@@ -19,16 +19,16 @@ import android.os.Bundle;
 import android.support.v17.leanback.app.BrowseFragment;
 import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.app.BrowseActivity;
-import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.DetailViewExampleActivity;
+import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.OldDetailViewExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.olddialog.DialogExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.VideoExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.oldsettings.SettingsExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.oldwizard.WizardExampleActivity;
-import android.support.v17.leanback.streamingapp.old.oldcards.presenters.CardPresenterSelector;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
-import android.support.v17.leanback.streamingapp.old.oldmodels.CardRow;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Movie;
-import android.support.v17.leanback.streamingapp.utils.Utils;
+import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCardPresenterSelector;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCardRow;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldMovie;
+import android.support.v17.leanback.streamingapp.utils.OldUtils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
@@ -74,19 +74,19 @@ public class OldMainFragment extends BrowseFragment {
     }
 
     private void createRows() {
-        String json = Utils
+        String json = OldUtils
                 .inputStreamToString(getResources().openRawResource(R.raw.launcher_cards));
-        CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
-        for (CardRow row : rows) {
+        OldCardRow[] rows = new Gson().fromJson(json, OldCardRow[].class);
+        for (OldCardRow row : rows) {
             mRowsAdapter.add(createCardRow(row));
         }
     }
 
-    private ListRow createCardRow(CardRow cardRow) {
-        PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
+    private ListRow createCardRow(OldCardRow oldCardRow) {
+        PresenterSelector presenterSelector = new OldCardPresenterSelector(getActivity());
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(presenterSelector);
-        for (Card card : cardRow.getCards()) {
-            listRowAdapter.add(card);
+        for (OldCard oldCard : oldCardRow.getCards()) {
+            listRowAdapter.add(oldCard);
         }
         return new ListRow(listRowAdapter);
     }
@@ -110,12 +110,12 @@ public class OldMainFragment extends BrowseFragment {
         public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item,
                                   RowPresenter.ViewHolder rowViewHolder, Row row) {
             Intent intent = null;
-            Card card = (Card) item;
-            int id = card.getId();
+            OldCard oldCard = (OldCard) item;
+            int id = oldCard.getId();
             switch (id) {
                 case 4: {
                     intent = new Intent(getActivity().getBaseContext(),
-                            DetailViewExampleActivity.class);
+                            OldDetailViewExampleActivity.class);
                     break;
                 }
                 case 5: {
@@ -124,19 +124,19 @@ public class OldMainFragment extends BrowseFragment {
                     break;
                 }
                 case 7: {
-                    // Let's create a new Wizard for a given Movie. The movie can come from any sort
+                    // Let's create a new Wizard for a given OldMovie. The oldMovie can come from any sort
                     // of data source. To simplify this example we decode it from a JSON source
                     // which might be loaded from a server in a real world example.
                     intent = new Intent(getActivity().getBaseContext(),
                             WizardExampleActivity.class);
 
-                    // Prepare extras which contains the Movie and will be passed to the Activity
+                    // Prepare extras which contains the OldMovie and will be passed to the Activity
                     // which is started through the Intent/.
                     Bundle extras = new Bundle();
-                    String json = Utils.inputStreamToString(
+                    String json = OldUtils.inputStreamToString(
                             getResources().openRawResource(R.raw.wizard_example));
-                    Movie movie = new Gson().fromJson(json, Movie.class);
-                    extras.putSerializable("movie", movie);
+                    OldMovie oldMovie = new Gson().fromJson(json, OldMovie.class);
+                    extras.putSerializable("oldMovie", oldMovie);
                     intent.putExtras(extras);
 
                     // Finally, start the wizard Activity.

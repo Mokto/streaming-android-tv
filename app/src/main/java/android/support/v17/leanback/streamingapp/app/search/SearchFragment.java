@@ -3,7 +3,7 @@ package android.support.v17.leanback.streamingapp.app.search;
 import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.os.Bundle;
-import android.support.v17.leanback.streamingapp.utils.Utils;
+import android.support.v17.leanback.streamingapp.utils.OldUtils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.ObjectAdapter;
@@ -24,7 +24,7 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
         Log.d("Mokto", "start Activity");
         setSearchResultProvider(this);
 
-        if (!Utils.hasPermission(getActivity(), Manifest.permission.RECORD_AUDIO)) {
+        if (!OldUtils.hasPermission(getActivity(), Manifest.permission.RECORD_AUDIO)) {
             // SpeechRecognitionCallback is not required and if not provided recognition will be handled
             // using internal speech recognizer, in which case you must have RECORD_AUDIO permission
             setSpeechRecognitionCallback(new SpeechRecognitionCallback() {
@@ -47,8 +47,8 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
         Log.d("Mokto", mRowsAdapter.toString());
 
         // It should return search result here,
-        // but static Movie Item list will be returned here now for practice.
-//        ArrayList<Movie> mItems = MovieProvider.getMovieItems();
+        // but static OldMovie Item list will be returned here now for practice.
+//        ArrayList<OldMovie> mItems = MovieProvider.getMovieItems();
 //        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
 //        listRowAdapter.addAll(0, mItems);
 //        HeaderItem header = new HeaderItem("Search results");

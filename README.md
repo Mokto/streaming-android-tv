@@ -2,14 +2,14 @@
 
 This sample app showcases different components that come with Leanback library.
 
-The home screen in this sample app is a BrowseFragment consisting of a set of different cards.
-Each card represents a component in Leanback.
+The home screen in this sample app is a BrowseFragment consisting of a set of different oldCards.
+Each oldCard represents a component in Leanback.
 
-All the cards in this sample app work except the Settings.
+All the oldCards in this sample app work except the Settings.
 Settings for now crashes due to some internal issue, and we are working on
 resolving that in the next few days.
 
-We will also add a new music example card soon.
+We will also add a new music example oldCard soon.
 This will be a new PlaybackOverlayFragment that comes with a set of new
 features.
 

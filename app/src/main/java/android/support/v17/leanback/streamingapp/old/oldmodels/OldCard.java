@@ -27,7 +27,7 @@ import java.net.URISyntaxException;
  * This is a generic example of a custom data object, containing info we might want to keep with
  * each card on the home screen
  */
-public class Card {
+public class OldCard {
 
     @SerializedName("title") private String mTitle = "";
     @SerializedName("description") private String mDescription = "";
@@ -38,7 +38,7 @@ public class Card {
     @SerializedName("localImageResource") private String mLocalImageResource = null;
     @SerializedName("image") private String image = null;
     @SerializedName("footerIconLocalImageResource") private String mFooterResource = null;
-    @SerializedName("type") private Card.Type mType;
+    @SerializedName("type") private OldCard.Type mType;
     @SerializedName("id") private int mId;
     @SerializedName("width") private int mWidth;
     @SerializedName("height") private int mHeight;
@@ -112,7 +112,7 @@ public class Card {
         return mId;
     }
 
-    public Card.Type getType() {
+    public OldCard.Type getType() {
         return mType;
     }
 

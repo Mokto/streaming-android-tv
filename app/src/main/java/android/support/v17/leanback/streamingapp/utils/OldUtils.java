@@ -25,7 +25,7 @@ import java.io.InputStream;
 /**
  * A collection of utility methods, all static.
  */
-public class Utils {
+public class OldUtils {
 
     public static int convertDpToPixel(Context ctx, int dp) {
         float density = ctx.getResources().getDisplayMetrics().density;

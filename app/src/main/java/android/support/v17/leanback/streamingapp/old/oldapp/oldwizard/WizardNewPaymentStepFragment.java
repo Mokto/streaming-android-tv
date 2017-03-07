@@ -39,7 +39,7 @@ public class WizardNewPaymentStepFragment extends WizardExampleBaseStepFragment 
     public GuidanceStylist.Guidance onCreateGuidance(Bundle savedInstanceState) {
         String title = getString(R.string.wizard_example_new_payment_guidance_title);
         String description = getString(R.string.wizard_example_new_payment_guidance_description);
-        String breadcrumb = mMovie.getBreadcrump();
+        String breadcrumb = mOldMovie.getBreadcrump();
 
         GuidanceStylist.Guidance guidance = new GuidanceStylist.Guidance(title, description,
                 breadcrumb, null);
@@ -53,7 +53,7 @@ public class WizardNewPaymentStepFragment extends WizardExampleBaseStepFragment 
                         .title(R.string.wizard_example_input_card)
                         .editTitle("")
                         .description(R.string.wizard_example_input_card)
-                        .editDescription("Card number")
+                        .editDescription("OldCard number")
                         .editable(true)
                         .build()
         );

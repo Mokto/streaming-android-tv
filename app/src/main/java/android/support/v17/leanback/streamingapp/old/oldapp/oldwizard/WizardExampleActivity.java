@@ -30,7 +30,7 @@ public class WizardExampleActivity extends Activity {
         getWindow().setBackgroundDrawableResource(R.drawable.wizard_background_blackned);
 
         GuidedStepFragment fragment = new WizardExample1stStepFragment();
-        fragment.setArguments(getIntent().getExtras()); // Delegate Movie to first step.
+        fragment.setArguments(getIntent().getExtras()); // Delegate OldMovie to first step.
         GuidedStepFragment.addAsRoot(this, fragment, android.R.id.content);
     }
 

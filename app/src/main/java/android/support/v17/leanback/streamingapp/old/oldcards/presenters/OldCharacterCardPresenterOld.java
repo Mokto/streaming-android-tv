@@ -15,27 +15,26 @@
 package android.support.v17.leanback.streamingapp.old.oldcards.presenters;
 
 import android.content.Context;
-import android.support.v17.leanback.streamingapp.old.oldcards.TextCardView;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.old.oldcards.OldCharacterCardView;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 
 /**
- * The Presenter displays a card consisting of text as a replacement for a big image. The footer is
- * also quite unique since it does contain two images rather than one or non.
+ * This Presenter is used to display the characters card row in the DetailView examples.
  */
-public class TextCardPresenter extends AbstractCardPresenter<TextCardView> {
+public class OldCharacterCardPresenterOld extends OldAbstractCardPresenter<OldCharacterCardView> {
 
-    public TextCardPresenter(Context context) {
+    public OldCharacterCardPresenterOld(Context context) {
         super(context);
     }
 
     @Override
-    protected TextCardView onCreateView() {
-        return new TextCardView(getContext());
+    protected OldCharacterCardView onCreateView() {
+        return new OldCharacterCardView(getContext());
     }
 
     @Override
-    public void onBindViewHolder(Card card, TextCardView cardView) {
-        cardView.updateUi(card);
+    public void onBindViewHolder(OldCard oldCard, OldCharacterCardView cardView) {
+        cardView.updateUi(oldCard);
     }
 
 }

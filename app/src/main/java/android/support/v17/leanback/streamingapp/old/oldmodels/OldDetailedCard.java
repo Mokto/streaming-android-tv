@@ -19,15 +19,15 @@ import android.content.Context;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DetailedCard {
+public class OldDetailedCard {
 
     @SerializedName("title") private String mTitle = "";
     @SerializedName("description") private String mDescription = "";
     @SerializedName("text") private String mText = "";
     @SerializedName("localImageResource") private String mLocalImageResource = null;
     @SerializedName("price") private String mPrice = null;
-    @SerializedName("characters") private Card[] mCharacters = null;
-    @SerializedName("recommended") private Card[] mRecommended = null;
+    @SerializedName("characters") private OldCard[] mCharacters = null;
+    @SerializedName("recommended") private OldCard[] mRecommended = null;
     @SerializedName("year") private int mYear = 0;
 
 
@@ -55,11 +55,11 @@ public class DetailedCard {
         return mTitle;
     }
 
-    public Card[] getCharacters() {
+    public OldCard[] getCharacters() {
         return mCharacters;
     }
 
-    public Card[] getRecommended() {
+    public OldCard[] getRecommended() {
         return mRecommended;
     }
 

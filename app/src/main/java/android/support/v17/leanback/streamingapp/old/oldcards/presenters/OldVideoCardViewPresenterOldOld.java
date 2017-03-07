@@ -15,8 +15,8 @@
 package android.support.v17.leanback.streamingapp.old.oldcards.presenters;
 
 import android.content.Context;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
-import android.support.v17.leanback.streamingapp.old.oldmodels.VideoCard;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldVideoCard;
 import android.support.v17.leanback.widget.ImageCardView;
 
 import com.bumptech.glide.Glide;
@@ -24,20 +24,20 @@ import com.bumptech.glide.Glide;
 /**
  * Presenter for rendering video cards on the Vertical Grid fragment.
  */
-public class VideoCardViewPresenter extends ImageCardViewPresenter {
+public class OldVideoCardViewPresenterOldOld extends OldImageCardViewPresenterOld {
 
-    public VideoCardViewPresenter(Context context, int cardThemeResId) {
+    public OldVideoCardViewPresenterOldOld(Context context, int cardThemeResId) {
         super(context, cardThemeResId);
     }
 
-    public VideoCardViewPresenter(Context context) {
+    public OldVideoCardViewPresenterOldOld(Context context) {
         super(context);
     }
 
     @Override
-    public void onBindViewHolder(Card card, final ImageCardView cardView) {
-        super.onBindViewHolder(card, cardView);
-        VideoCard videoCard = (VideoCard) card;
+    public void onBindViewHolder(OldCard oldCard, final ImageCardView cardView) {
+        super.onBindViewHolder(oldCard, cardView);
+        OldVideoCard videoCard = (OldVideoCard) oldCard;
         Glide.with(getContext())
                 .load(videoCard.getImageUrl())
                 .asBitmap()

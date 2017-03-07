@@ -59,7 +59,7 @@
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackDialog"/>
         <activity
-            android:name="android.support.v17.leanback.streamingapp.old.oldapp.olddetails.DetailViewExampleActivity"
+            android:name="android.support.v17.leanback.streamingapp.old.oldapp.olddetails.OldDetailViewExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackDetails"/>
         <activity

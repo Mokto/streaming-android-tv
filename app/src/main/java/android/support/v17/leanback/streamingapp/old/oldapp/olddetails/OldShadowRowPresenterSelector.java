@@ -15,30 +15,30 @@
 
 package android.support.v17.leanback.streamingapp.old.oldapp.olddetails;
 
-import android.support.v17.leanback.streamingapp.old.oldmodels.CardRow;
-import android.support.v17.leanback.streamingapp.utils.CardListRow;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCardRow;
+import android.support.v17.leanback.streamingapp.utils.OldCardListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
 
 /**
  * This {@link PresenterSelector} will return a {@link ListRowPresenter} which has shadow support
- * enabled or not depending on {@link CardRow#useShadow()} for a given row.
+ * enabled or not depending on {@link OldCardRow#useShadow()} for a given row.
  */
-public class ShadowRowPresenterSelector extends PresenterSelector {
+public class OldShadowRowPresenterSelector extends PresenterSelector {
 
     private ListRowPresenter mShadowEnabledRowPresenter = new ListRowPresenter();
     private ListRowPresenter mShadowDisabledRowPresenter = new ListRowPresenter();
 
-    public ShadowRowPresenterSelector() {
+    public OldShadowRowPresenterSelector() {
         mShadowEnabledRowPresenter.setNumRows(1);
         mShadowDisabledRowPresenter.setShadowEnabled(false);
     }
 
     @Override public Presenter getPresenter(Object item) {
-        if (!(item instanceof CardListRow)) return mShadowDisabledRowPresenter;
-        CardListRow listRow = (CardListRow) item;
-        CardRow row = listRow.getCardRow();
+        if (!(item instanceof OldCardListRow)) return mShadowDisabledRowPresenter;
+        OldCardListRow listRow = (OldCardListRow) item;
+        OldCardRow row = listRow.getCardRow();
         if (row.useShadow()) return mShadowEnabledRowPresenter;
         return mShadowDisabledRowPresenter;
     }

@@ -2,9 +2,8 @@ package android.support.v17.leanback.streamingapp.app.page;
 
 import android.os.Bundle;
 import android.support.v17.leanback.streamingapp.api.Api;
-import android.support.v17.leanback.streamingapp.old.oldapp.oldpage.GridFragment;
-import android.support.v17.leanback.streamingapp.old.oldcards.presenters.CardPresenterSelector;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCardPresenterSelector;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.FocusHighlight;
 import android.support.v17.leanback.widget.OnItemViewClickedListener;
@@ -29,7 +28,7 @@ public class GridTestFragment extends android.support.v17.leanback.streamingapp.
     private static final int COLUMNS = 6;
     private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_LARGE;
     private ArrayObjectAdapter mAdapter;
-//    private List<Card> cards = new ArrayList<>();
+//    private List<OldCard> cards = new ArrayList<>();
     private Boolean isLoading = false;
     private Integer page = 1;
     private static Integer PER_PAGE = 30;
@@ -48,7 +47,7 @@ public class GridTestFragment extends android.support.v17.leanback.streamingapp.
         presenter.setNumberOfColumns(COLUMNS);
         setGridPresenter(presenter);
 
-        CardPresenterSelector cardPresenter = new CardPresenterSelector(getActivity());
+        OldCardPresenterSelector cardPresenter = new OldCardPresenterSelector(getActivity());
         mAdapter = new ArrayObjectAdapter(cardPresenter);
         setAdapter(mAdapter);
 
@@ -59,9 +58,9 @@ public class GridTestFragment extends android.support.v17.leanback.streamingapp.
                     Object item,
                     RowPresenter.ViewHolder rowViewHolder,
                     Row row) {
-                Card card = (Card)item;
+                OldCard oldCard = (OldCard)item;
                 Toast.makeText(getActivity(),
-                        "Clicked on "+card.getTitle(),
+                        "Clicked on "+ oldCard.getTitle(),
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -96,9 +95,9 @@ public class GridTestFragment extends android.support.v17.leanback.streamingapp.
                         isLoading = false;
                         page++;
 
-                        List<Card> cards = new Gson().fromJson(response.toString(), new TypeToken<List<Card>>(){}.getType());
+                        List<OldCard> oldCards = new Gson().fromJson(response.toString(), new TypeToken<List<OldCard>>(){}.getType());
 
-                        mAdapter.addAll(mAdapter.size(), cards);
+                        mAdapter.addAll(mAdapter.size(), oldCards);
 
                         getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
                     }

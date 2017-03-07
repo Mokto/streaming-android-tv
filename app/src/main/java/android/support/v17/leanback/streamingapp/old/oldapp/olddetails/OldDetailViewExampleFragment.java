@@ -17,12 +17,12 @@ package android.support.v17.leanback.streamingapp.old.oldapp.olddetails;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v17.leanback.app.DetailsFragment;
-import android.support.v17.leanback.streamingapp.old.oldmodels.DetailedCard;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldDetailedCard;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.utils.CardListRow;
-import android.support.v17.leanback.streamingapp.utils.Utils;
-import android.support.v17.leanback.streamingapp.old.oldcards.presenters.CardPresenterSelector;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.utils.OldCardListRow;
+import android.support.v17.leanback.streamingapp.utils.OldUtils;
+import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCardPresenterSelector;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.Action;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ClassPresenterSelector;
@@ -46,7 +46,7 @@ import com.google.gson.Gson;
 /**
  * Displays a card with more details using a {@link DetailsFragment}.
  */
-public class DetailViewExampleFragment extends DetailsFragment implements OnItemViewClickedListener,
+public class OldDetailViewExampleFragment extends DetailsFragment implements OnItemViewClickedListener,
         OnItemViewSelectedListener {
 
     public static final String TRANSITION_NAME = "t_for_transition";
@@ -64,15 +64,15 @@ public class DetailViewExampleFragment extends DetailsFragment implements OnItem
     private void setupUi() {
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.
-        String json = Utils
+        String json = OldUtils
                 .inputStreamToString(getResources().openRawResource(R.raw.detail_example));
-        DetailedCard data = new Gson().fromJson(json, DetailedCard.class);
+        OldDetailedCard data = new Gson().fromJson(json, OldDetailedCard.class);
 
         // Setup fragment
         setTitle(getString(R.string.detail_view_title));
 
         FullWidthDetailsOverviewRowPresenter rowPresenter = new FullWidthDetailsOverviewRowPresenter(
-                new DetailsDescriptionPresenter(getActivity())) {
+                new OldDetailsDescriptionPresenter(getActivity())) {
 
             @Override
             protected RowPresenter.ViewHolder createRowViewHolder(ViewGroup parent) {
@@ -103,7 +103,7 @@ public class DetailViewExampleFragment extends DetailsFragment implements OnItem
         // Setup PresenterSelector to distinguish between the different rows.
         ClassPresenterSelector rowPresenterSelector = new ClassPresenterSelector();
         rowPresenterSelector.addClassPresenter(DetailsOverviewRow.class, rowPresenter);
-        rowPresenterSelector.addClassPresenter(CardListRow.class, shadowDisabledRowPresenter);
+        rowPresenterSelector.addClassPresenter(OldCardListRow.class, shadowDisabledRowPresenter);
         rowPresenterSelector.addClassPresenter(ListRow.class, new ListRowPresenter());
         mRowsAdapter = new ArrayObjectAdapter(rowPresenterSelector);
 
@@ -125,14 +125,14 @@ public class DetailViewExampleFragment extends DetailsFragment implements OnItem
 
         // Setup related row.
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(
-                new CardPresenterSelector(getActivity()));
-        for (Card characterCard : data.getCharacters()) listRowAdapter.add(characterCard);
+                new OldCardPresenterSelector(getActivity()));
+        for (OldCard characterOldCard : data.getCharacters()) listRowAdapter.add(characterOldCard);
         HeaderItem header = new HeaderItem(0, getString(R.string.header_related));
-        mRowsAdapter.add(new CardListRow(header, listRowAdapter, null));
+        mRowsAdapter.add(new OldCardListRow(header, listRowAdapter, null));
 
         // Setup recommended row.
-        listRowAdapter = new ArrayObjectAdapter(new CardPresenterSelector(getActivity()));
-        for (Card card : data.getRecommended()) listRowAdapter.add(card);
+        listRowAdapter = new ArrayObjectAdapter(new OldCardPresenterSelector(getActivity()));
+        for (OldCard oldCard : data.getRecommended()) listRowAdapter.add(oldCard);
         header = new HeaderItem(1, getString(R.string.header_recommended));
         mRowsAdapter.add(new ListRow(header, listRowAdapter));
 

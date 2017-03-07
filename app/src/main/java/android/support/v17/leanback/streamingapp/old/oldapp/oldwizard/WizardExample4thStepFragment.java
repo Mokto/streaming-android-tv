@@ -36,9 +36,9 @@ public class WizardExample4thStepFragment extends WizardExampleBaseStepFragment 
     @NonNull
     @Override
     public GuidanceStylist.Guidance onCreateGuidance(Bundle savedInstanceState) {
-        GuidanceStylist.Guidance guidance = new GuidanceStylist.Guidance(mMovie.getTitle(),
+        GuidanceStylist.Guidance guidance = new GuidanceStylist.Guidance(mOldMovie.getTitle(),
                 getString(R.string.wizard_example_rental_period),
-                mMovie.getBreadcrump(), null);
+                mOldMovie.getBreadcrump(), null);
         return guidance;
     }
 

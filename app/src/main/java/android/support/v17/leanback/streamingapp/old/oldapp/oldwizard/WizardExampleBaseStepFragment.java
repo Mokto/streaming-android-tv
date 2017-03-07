@@ -16,7 +16,7 @@ package android.support.v17.leanback.streamingapp.old.oldapp.oldwizard;
 
 import android.os.Bundle;
 import android.support.v17.leanback.app.GuidedStepFragment;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Movie;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldMovie;
 import android.support.v17.leanback.streamingapp.R;
 
 /**
@@ -25,7 +25,7 @@ import android.support.v17.leanback.streamingapp.R;
  */
 public abstract class WizardExampleBaseStepFragment extends GuidedStepFragment {
 
-    protected Movie mMovie;
+    protected OldMovie mOldMovie;
 
     @Override
     public int onProvideTheme() {
@@ -41,7 +41,7 @@ public abstract class WizardExampleBaseStepFragment extends GuidedStepFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        mMovie = (Movie) getArguments().getSerializable("movie");
+        mOldMovie = (OldMovie) getArguments().getSerializable("movie");
         super.onCreate(savedInstanceState);
     }
 }

@@ -14,7 +14,7 @@
 package android.support.v17.leanback.streamingapp.old.oldcards.presenters;
 
 import android.content.Context;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v17.leanback.widget.Presenter;
 import android.view.ViewGroup;
@@ -26,15 +26,15 @@ import android.view.ViewGroup;
  *
  * @param <T> View type for the card.
  */
-public abstract class AbstractCardPresenter<T extends BaseCardView> extends Presenter {
+public abstract class OldAbstractCardPresenter<T extends BaseCardView> extends Presenter {
 
-    private static final String TAG = "AbstractCardPresenter";
+    private static final String TAG = "OldAbstractCardPresenter";
     private final Context mContext;
 
     /**
      * @param context The current context.
      */
-    public AbstractCardPresenter(Context context) {
+    public OldAbstractCardPresenter(Context context) {
         mContext = context;
     }
 
@@ -48,8 +48,8 @@ public abstract class AbstractCardPresenter<T extends BaseCardView> extends Pres
     }
 
     @Override public final void onBindViewHolder(ViewHolder viewHolder, Object item) {
-        Card card = (Card) item;
-        onBindViewHolder(card, (T) viewHolder.view);
+        OldCard oldCard = (OldCard) item;
+        onBindViewHolder(oldCard, (T) viewHolder.view);
     }
 
     @Override public final void onUnbindViewHolder(ViewHolder viewHolder) {
@@ -68,12 +68,12 @@ public abstract class AbstractCardPresenter<T extends BaseCardView> extends Pres
     protected abstract T onCreateView();
 
     /**
-     * Implement this method to update your card's view with the data bound to it.
+     * Implement this method to update your oldCard's view with the data bound to it.
      *
-     * @param card The model containing the data for the card.
-     * @param cardView The view the card is bound to.
+     * @param oldCard The model containing the data for the oldCard.
+     * @param cardView The view the oldCard is bound to.
      * @see Presenter#onBindViewHolder(Presenter.ViewHolder, Object)
      */
-    public abstract void onBindViewHolder(Card card, T cardView);
+    public abstract void onBindViewHolder(OldCard oldCard, T cardView);
 
 }

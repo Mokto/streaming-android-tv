@@ -16,16 +16,16 @@ package android.support.v17.leanback.streamingapp.old.oldapp.oldpage;
 
 import android.content.Context;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.old.oldcards.presenters.ImageCardViewPresenter;
+import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldImageCardViewPresenterOld;
 import android.support.v17.leanback.widget.ImageCardView;
 import android.view.View;
 
 /**
  * Simple presenter implementation to represent settings icon as cards.
  */
-public class SettingsIconPresenter extends ImageCardViewPresenter {
+public class SettingsIconPresenterOldOld extends OldImageCardViewPresenterOld {
 
-    public SettingsIconPresenter(Context context) {
+    public SettingsIconPresenterOldOld(Context context) {
         super(context, R.style.IconCardTheme);
     }
 

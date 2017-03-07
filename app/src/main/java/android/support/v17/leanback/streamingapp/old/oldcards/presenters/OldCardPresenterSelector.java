@@ -17,7 +17,7 @@ package android.support.v17.leanback.streamingapp.old.oldcards.presenters;
 
 import android.content.Context;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
 
@@ -26,29 +26,29 @@ import java.util.HashMap;
 /**
  * This PresenterSelector will decide what Presenter to use depending on a given card's type.
  */
-public class CardPresenterSelector extends PresenterSelector {
+public class OldCardPresenterSelector extends PresenterSelector {
 
     private final Context mContext;
-    private final HashMap<Card.Type, Presenter> presenters = new HashMap<Card.Type, Presenter>();
+    private final HashMap<OldCard.Type, Presenter> presenters = new HashMap<OldCard.Type, Presenter>();
 
-    public CardPresenterSelector(Context context) {
+    public OldCardPresenterSelector(Context context) {
         mContext = context;
     }
 
     @Override
     public Presenter getPresenter(Object item) {
-        if (!(item instanceof Card)) throw new RuntimeException(
+        if (!(item instanceof OldCard)) throw new RuntimeException(
                 String.format("The PresenterSelector only supports data items of type '%s'",
-                        Card.class.getName()));
-        Card card = (Card) item;
-        Presenter presenter = presenters.get(card.getType());
+                        OldCard.class.getName()));
+        OldCard oldCard = (OldCard) item;
+        Presenter presenter = presenters.get(oldCard.getType());
         if (presenter == null) {
-            switch (card.getType()) {
+            switch (oldCard.getType()) {
                 case SINGLE_LINE:
-                    presenter = new SingleLineCardPresenter(mContext);
+                    presenter = new OldSingleLineCardPresenterOldOld(mContext);
                     break;
                 case VIDEO_GRID:
-                    presenter = new VideoCardViewPresenter(mContext, R.style.VideoGridCardTheme);
+                    presenter = new OldVideoCardViewPresenterOldOld(mContext, R.style.VideoGridCardTheme);
                     break;
                 case MOVIE:
                 case MOVIE_BASE:
@@ -57,38 +57,38 @@ public class CardPresenterSelector extends PresenterSelector {
                 case GRID_SQUARE:
                 case GAME: {
                     int themeResId = R.style.MovieCardSimpleTheme;
-                    if (card.getType() == Card.Type.MOVIE_BASE) {
+                    if (oldCard.getType() == OldCard.Type.MOVIE_BASE) {
                         themeResId = R.style.MovieCardBasicTheme;
-                    } else if (card.getType() == Card.Type.MOVIE_COMPLETE) {
+                    } else if (oldCard.getType() == OldCard.Type.MOVIE_COMPLETE) {
                         themeResId = R.style.MovieCardCompleteTheme;
-                    } else if (card.getType() == Card.Type.SQUARE_BIG) {
+                    } else if (oldCard.getType() == OldCard.Type.SQUARE_BIG) {
                         themeResId = R.style.SquareBigCardTheme;
-                    } else if (card.getType() == Card.Type.GRID_SQUARE) {
+                    } else if (oldCard.getType() == OldCard.Type.GRID_SQUARE) {
                         themeResId = R.style.GridCardTheme;
-                    } else if (card.getType() == Card.Type.GAME) {
+                    } else if (oldCard.getType() == OldCard.Type.GAME) {
                         themeResId = R.style.GameCardTheme;
                     }
-                    presenter = new ImageCardViewPresenter(mContext, themeResId);
+                    presenter = new OldImageCardViewPresenterOld(mContext, themeResId);
                     break;
                 }
                 case SIDE_INFO:
-                    presenter = new SideInfoCardPresenter(mContext);
+                    presenter = new OldSideInfoCardPresenterOld(mContext);
                     break;
                 case TEXT:
-                    presenter = new TextCardPresenter(mContext);
+                    presenter = new OldTextCardPresenterOld(mContext);
                     break;
                 case ICON:
-                    presenter = new IconCardPresenter(mContext);
+                    presenter = new OldIconCardPresenterOldOld(mContext);
                     break;
                 case CHARACTER:
-                    presenter = new CharacterCardPresenter(mContext);
+                    presenter = new OldCharacterCardPresenterOld(mContext);
                     break;
                 default:
-                    presenter = new ImageCardViewPresenter(mContext);
+                    presenter = new OldImageCardViewPresenterOld(mContext);
                     break;
             }
         }
-        presenters.put(card.getType(), presenter);
+        presenters.put(oldCard.getType(), presenter);
         return presenter;
     }
 

@@ -18,7 +18,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -26,24 +26,24 @@ import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TextCardView extends BaseCardView {
+public class OldTextCardView extends BaseCardView {
 
-    public TextCardView(Context context) {
+    public OldTextCardView(Context context) {
         super(context, null, R.style.TextCardStyle);
         LayoutInflater.from(getContext()).inflate(R.layout.text_icon_card, this);
         setFocusable(true);
     }
 
-    public void updateUi(Card card) {
+    public void updateUi(OldCard oldCard) {
         TextView extraText = (TextView) findViewById(R.id.extra_text);
         TextView primaryText = (TextView) findViewById(R.id.primary_text);
         final ImageView imageView = (ImageView) findViewById(R.id.main_image);
 
-        extraText.setText(card.getExtraText());
-        primaryText.setText(card.getTitle());
+        extraText.setText(oldCard.getExtraText());
+        primaryText.setText(oldCard.getTitle());
 
         // Create a rounded drawable.
-        int resourceId = card.getLocalImageResourceId(getContext());
+        int resourceId = oldCard.getLocalImageResourceId(getContext());
         Bitmap bitmap = BitmapFactory
                 .decodeResource(getContext().getResources(), resourceId);
         RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(getContext().getResources(), bitmap);

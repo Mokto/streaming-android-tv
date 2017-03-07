@@ -56,9 +56,9 @@ public class WizardExample2ndStepFragment extends WizardExampleBaseStepFragment 
     @NonNull
     @Override
     public GuidanceStylist.Guidance onCreateGuidance(Bundle savedInstanceState) {
-        GuidanceStylist.Guidance guidance = new GuidanceStylist.Guidance(mMovie.getTitle(),
+        GuidanceStylist.Guidance guidance = new GuidanceStylist.Guidance(mOldMovie.getTitle(),
                 getString(R.string.wizard_example_rental_period),
-                mMovie.getBreadcrump(), null);
+                mOldMovie.getBreadcrump(), null);
         return guidance;
 
     }
@@ -70,7 +70,7 @@ public class WizardExample2ndStepFragment extends WizardExampleBaseStepFragment 
         GuidedAction action = new GuidedAction.Builder(getActivity())
                 .id(ACTION_ID_CONFIRM)
                 .title(R.string.wizard_example_rent)
-                .description(rentHighDefinition ? mMovie.getPriceHd() : mMovie.getPriceSd())
+                .description(rentHighDefinition ? mOldMovie.getPriceHd() : mOldMovie.getPriceSd())
                 .editable(false)
                 .build();
         action.setEnabled(false);
@@ -103,7 +103,7 @@ public class WizardExample2ndStepFragment extends WizardExampleBaseStepFragment 
         }
         paymentSubActions.add(new GuidedAction.Builder(getActivity())
                 .id(ACTION_ID_NEW_PAYMENT)
-                .title("Add New Card")
+                .title("Add New OldCard")
                 .description("")
                 .editable(false)
                 .build()

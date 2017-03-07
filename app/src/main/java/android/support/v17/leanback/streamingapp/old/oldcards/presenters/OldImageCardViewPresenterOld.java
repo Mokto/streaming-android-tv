@@ -16,7 +16,7 @@ package android.support.v17.leanback.streamingapp.old.oldcards.presenters;
 
 import android.content.Context;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.ImageCardView;
 import android.view.ContextThemeWrapper;
 
@@ -27,13 +27,13 @@ import com.squareup.picasso.Picasso;
  * pass a custom style for the ImageCardView in the constructor. Use the default constructor to
  * create a Presenter with a default ImageCardView style.
  */
-public class ImageCardViewPresenter extends AbstractCardPresenter<ImageCardView> {
+public class OldImageCardViewPresenterOld extends OldAbstractCardPresenter<ImageCardView> {
 
-    public ImageCardViewPresenter(Context context, int cardThemeResId) {
+    public OldImageCardViewPresenterOld(Context context, int cardThemeResId) {
         super(new ContextThemeWrapper(context, cardThemeResId));
     }
 
-    public ImageCardViewPresenter(Context context) {
+    public OldImageCardViewPresenterOld(Context context) {
         this(context, R.style.DefaultCardTheme);
     }
 
@@ -50,17 +50,17 @@ public class ImageCardViewPresenter extends AbstractCardPresenter<ImageCardView>
     }
 
     @Override
-    public void onBindViewHolder(Card card, final ImageCardView cardView) {
-        cardView.setTag(card);
-        cardView.setTitleText(card.getTitle());
-        cardView.setContentText(card.getDescription());
+    public void onBindViewHolder(OldCard oldCard, final ImageCardView cardView) {
+        cardView.setTag(oldCard);
+        cardView.setTitleText(oldCard.getTitle());
+        cardView.setContentText(oldCard.getDescription());
 
-        if (card.getImage() != null) {
-            Picasso.with(getContext()).load(card.getImage()).into(cardView.getMainImageView());
+        if (oldCard.getImage() != null) {
+            Picasso.with(getContext()).load(oldCard.getImage()).into(cardView.getMainImageView());
 
-        } else if (card.getLocalImageResourceName() != null) {
+        } else if (oldCard.getLocalImageResourceName() != null) {
             int resourceId = getContext().getResources()
-                    .getIdentifier(card.getLocalImageResourceName(),
+                    .getIdentifier(oldCard.getLocalImageResourceName(),
                             "drawable", getContext().getPackageName());
             Picasso.with(getContext()).load(resourceId).into(cardView.getMainImageView());
         }

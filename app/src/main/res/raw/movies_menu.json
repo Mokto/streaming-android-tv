@@ -431,11 +431,11 @@
     ]
   },
   {
-    "title": "ImageCardView Customize Style",
+    "title": "Streaming Lists",
     "cards": [
       {
         "type": "SINGLE_LINE",
-        "title": "Action & Adventure",
+        "title": "Trending",
         "footerColor": "#dd004e",
         "localImageResource": "category_action"
       },

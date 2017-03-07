@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.os.Handler;
 import android.support.v17.leanback.app.RowsFragment;
 import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.old.oldapp.oldpage.SettingsIconPresenter;
-import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
-import android.support.v17.leanback.streamingapp.old.oldmodels.CardRow;
-import android.support.v17.leanback.streamingapp.utils.CardListRow;
-import android.support.v17.leanback.streamingapp.utils.Utils;
+import android.support.v17.leanback.streamingapp.old.oldapp.oldpage.SettingsIconPresenterOldOld;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldCardRow;
+import android.support.v17.leanback.streamingapp.utils.OldCardListRow;
+import android.support.v17.leanback.streamingapp.utils.OldUtils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
@@ -40,24 +40,24 @@ public class SettingsFragment extends RowsFragment {
 
     private void loadData() {
         if (isAdded()) {
-            String json = Utils.inputStreamToString(getResources().openRawResource(
+            String json = OldUtils.inputStreamToString(getResources().openRawResource(
                     R.raw.icon_example));
-            CardRow cardRow = new Gson().fromJson(json, CardRow.class);
-            mRowsAdapter.add(createCardRow(cardRow));
-            mRowsAdapter.add(createCardRow(cardRow));
+            OldCardRow oldCardRow = new Gson().fromJson(json, OldCardRow.class);
+            mRowsAdapter.add(createCardRow(oldCardRow));
+            mRowsAdapter.add(createCardRow(oldCardRow));
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(
                     getMainFragmentAdapter());
         }
     }
 
-    private ListRow createCardRow(CardRow cardRow) {
-        SettingsIconPresenter iconCardPresenter = new SettingsIconPresenter(getActivity());
+    private ListRow createCardRow(OldCardRow oldCardRow) {
+        SettingsIconPresenterOldOld iconCardPresenter = new SettingsIconPresenterOldOld(getActivity());
         ArrayObjectAdapter adapter = new ArrayObjectAdapter(iconCardPresenter);
-        for(Card card : cardRow.getCards()) {
-            adapter.add(card);
+        for(OldCard oldCard : oldCardRow.getCards()) {
+            adapter.add(oldCard);
         }
 
-        HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
-        return new CardListRow(headerItem, adapter, cardRow);
+        HeaderItem headerItem = new HeaderItem(oldCardRow.getTitle());
+        return new OldCardListRow(headerItem, adapter, oldCardRow);
     }
 }

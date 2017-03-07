@@ -27,10 +27,10 @@ import android.widget.ImageView;
  * surrounding circle when the card is focused. AndroidTV uses these cards for entering settings
  * menu.
  */
-public class IconCardPresenter extends ImageCardViewPresenter {
+public class OldIconCardPresenterOldOld extends OldImageCardViewPresenterOld {
     private static final int ANIMATION_DURATION = 200;
 
-    public IconCardPresenter(Context context) {
+    public OldIconCardPresenterOldOld(Context context) {
         super(context, R.style.IconCardTheme);
     }
 

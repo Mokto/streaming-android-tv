@@ -35,9 +35,9 @@ public class WizardExample1stStepFragment extends WizardExampleBaseStepFragment 
     @NonNull
     @Override
     public GuidanceStylist.Guidance onCreateGuidance(Bundle savedInstanceState) {
-        GuidanceStylist.Guidance guidance = new GuidanceStylist.Guidance(mMovie.getTitle(),
+        GuidanceStylist.Guidance guidance = new GuidanceStylist.Guidance(mOldMovie.getTitle(),
                 getString(R.string.wizard_example_choose_rent_options),
-                mMovie.getBreadcrump(), null);
+                mOldMovie.getBreadcrump(), null);
         return guidance;
     }
 
@@ -47,7 +47,7 @@ public class WizardExample1stStepFragment extends WizardExampleBaseStepFragment 
                 .id(ACTION_ID_BUY_HD)
                 .title(R.string.wizard_example_rent_hd)
                 .editable(false)
-                .description(mMovie.getPriceHd() + " " +
+                .description(mOldMovie.getPriceHd() + " " +
                         getString(R.string.wizard_example_watch_hd))
                 .build();
         actions.add(action);
@@ -55,7 +55,7 @@ public class WizardExample1stStepFragment extends WizardExampleBaseStepFragment 
                 .id(ACTION_ID_BUY_SD)
                 .title(getString(R.string.wizard_example_rent_sd))
                 .editable(false)
-                .description(mMovie.getPriceSd() + " " +
+                .description(mOldMovie.getPriceSd() + " " +
                         getString(R.string.wizard_example_watch_sd))
                 .build();
         actions.add(action);

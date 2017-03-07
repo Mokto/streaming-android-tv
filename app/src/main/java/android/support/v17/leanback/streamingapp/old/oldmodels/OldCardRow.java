@@ -22,7 +22,7 @@ import java.util.List;
  * This class represents a row of cards. In a real world application you might want to store more
  * data than in this example.
  */
-public class CardRow {
+public class OldCardRow {
 
     // default is a list of cards
     public static final int TYPE_DEFAULT = 0;
@@ -35,7 +35,7 @@ public class CardRow {
     // Used to determine whether the row shall use shadows when displaying its cards or not.
     @SerializedName("shadow") private boolean mShadow = true;
     @SerializedName("title") private String mTitle;
-    @SerializedName("cards") private List<Card> mCards;
+    @SerializedName("cards") private List<OldCard> mOldCards;
 
     public int getType() {
         return mType;
@@ -49,8 +49,8 @@ public class CardRow {
         return mShadow;
     }
 
-    public List<Card> getCards() {
-        return mCards;
+    public List<OldCard> getCards() {
+        return mOldCards;
     }
 
 }
