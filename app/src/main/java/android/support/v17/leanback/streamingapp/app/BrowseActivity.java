@@ -15,11 +15,6 @@ public class BrowseActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browser_fragment);
     }
-//
-//    @Override
-//    public boolean onSearchRequested() {
-//        startActivity(new Intent(this, SearchActivity.class));
-//        return true;
-//    }
+
 }
 

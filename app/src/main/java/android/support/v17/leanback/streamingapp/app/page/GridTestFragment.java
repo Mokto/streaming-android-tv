@@ -25,7 +25,7 @@ import org.json.JSONArray;
 
 import java.util.List;
 
-public class StreamingFilmsFragment extends GridFragment {
+public class GridTestFragment extends android.support.v17.leanback.streamingapp.old.oldapp.oldpage.GridFragment {
     private static final int COLUMNS = 6;
     private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_LARGE;
     private ArrayObjectAdapter mAdapter;

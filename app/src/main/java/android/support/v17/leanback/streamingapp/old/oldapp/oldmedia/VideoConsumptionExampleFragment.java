@@ -32,7 +32,9 @@ import android.view.SurfaceView;
 public class VideoConsumptionExampleFragment extends PlaybackOverlayFragment implements
         OnItemViewClickedListener, MediaPlayerGlue.OnMediaStateChangeListener {
 
-    private static final String URL = "http://ihfav1.alld.io/dl/108jexd9ef1/Passengers 2016 HD-TS V.2 x264 AC3-CPG.mkv.mp4";
+    private static final String URL = "http://techslides.com/demos/sample-videos/small.mp4";
+
+//    private static final String URL = "http://ihfav1.alld.io/dl/108jexd9ef1/Passengers 2016 HD-TS V.2 x264 AC3-CPG.mkv.mp4";
     // http://74i1bv.alld.io/dl/108j7u118fc/Focus.2015.720p.10bit.BluRay.x265-YSTeam.mkv
     public static final String TAG = "VideoConsumptionExampleFragment";
     private ArrayObjectAdapter mRowsAdapter;

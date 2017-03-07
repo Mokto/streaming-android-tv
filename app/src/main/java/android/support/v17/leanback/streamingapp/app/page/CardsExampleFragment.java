@@ -2,6 +2,7 @@ package android.support.v17.leanback.streamingapp.app.page;
 
 import android.os.Bundle;
 import android.support.v17.leanback.app.RowsFragment;
+import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.api.Api;
 import android.support.v17.leanback.streamingapp.api.VidSourceApi;
 import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.ShadowRowPresenterSelector;
@@ -9,6 +10,7 @@ import android.support.v17.leanback.streamingapp.old.oldcards.presenters.CardPre
 import android.support.v17.leanback.streamingapp.old.oldmodels.Card;
 import android.support.v17.leanback.streamingapp.old.oldmodels.CardRow;
 import android.support.v17.leanback.streamingapp.utils.CardListRow;
+import android.support.v17.leanback.streamingapp.utils.Utils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.OnItemViewClickedListener;
@@ -25,12 +27,12 @@ import com.google.gson.Gson;
 
 import org.json.JSONArray;
 
-public class StreamingTVFragment extends RowsFragment {
+public class CardsExampleFragment extends RowsFragment {
     private final ArrayObjectAdapter mRowsAdapter;
     private JSONArray response;
 
 
-    public StreamingTVFragment() {
+    public CardsExampleFragment() {
         mRowsAdapter = new ArrayObjectAdapter(new ShadowRowPresenterSelector());
         setAdapter(mRowsAdapter);
         setOnItemViewClickedListener(new OnItemViewClickedListener() {
@@ -41,89 +43,29 @@ public class StreamingTVFragment extends RowsFragment {
                     RowPresenter.ViewHolder rowViewHolder,
                     Row row) {
 
-
-                getEmbeddableLink(((Card) item).getImdbId());
-
-                Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
-                        .show();
             }
         });
-
     }
-
-    private void getEmbeddableLink(String imdbId) {
-        VidSourceApi api = new VidSourceApi();
-        api.get(imdbId, this.getActivity().getBaseContext(),
-                new Response.Listener<String>()
-                {
-                    @Override
-                    public void onResponse(String r) {
-
-                        //"https://openload.co/embed/zQqgABpbm1s"
-
-                        Log.d("Mokto", r);
-                    }
-                },
-                new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-                        Log.e("Mokto", error.getMessage() + " / " + error.networkResponse.statusCode);
-                    }
-                });
-    }
-
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        this.getData();
-    }
-
-    public void getData() {
-        Api api = new Api();
-        api.getMovies(this.getActivity().getBaseContext(),
-                new Response.Listener<JSONArray>()
-                {
-                    @Override
-                    public void onResponse(JSONArray r) {
-                        response = r;
-                        onDataResponse();
-                    }
-                },
-                new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-                        Log.e("Mokto", "SUCCESS" + error.toString());
-                    }
-                });
-    }
-
-    public void onDataResponse() {
         createRows();
         getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
     }
 
     private void createRows() {
+        String json = Utils
+                .inputStreamToString(getResources().openRawResource(R.raw.cards_example));
 
-        CardRow[] rows = new Gson().fromJson(response.toString(), CardRow[].class);
+        CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
         for (CardRow row : rows) {
-            if (row.getType() == CardRow.TYPE_DEFAULT) {
-                Row cardRow2 = createCardRow(row);
-                cardRow2.setHeaderItem(null);
-//                    if (row.getTitle() == "") {
-//                        cardRow2.setHeaderItem(null);
-//                    }
-                mRowsAdapter.add(cardRow2);
-            }
+            mRowsAdapter.add(createCardRow(row));
         }
 
-//        mRowsAdapter.add(new CardListRow(new HeaderItem("Test"), null, (CardRow) new StreamingFilmsFragment());
+//        mRowsAdapter.add(new CardListRow(new HeaderItem("Test"), null, (CardRow) new GridFragment());
     }
 
     private Row createCardRow(CardRow cardRow) {

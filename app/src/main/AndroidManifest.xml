@@ -46,18 +46,6 @@
             android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
 
 
-
-
-
-
-
-
-
-
-        <activity
-                android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldpage.PageAndListRowActivity"
-                android:exported="true"
-                android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
         <activity
             android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldwizard.WizardExampleActivity"
             android:exported="true"
@@ -95,12 +83,7 @@
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true"
             />
-        <activity
-            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.MusicExampleActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Example.LeanbackMusic"/>
 
-        <service android:exported="false" android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.MusicPlaybackService"/>
     </application>
 
 </manifest>

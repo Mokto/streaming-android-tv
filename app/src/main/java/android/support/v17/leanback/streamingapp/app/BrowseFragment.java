@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v17.leanback.app.BackgroundManager;
 import android.support.v17.leanback.streamingapp.R;
+import android.support.v17.leanback.streamingapp.app.page.GridTestFragment;
+import android.support.v17.leanback.streamingapp.app.page.MoviesFragment;
 import android.support.v17.leanback.streamingapp.app.page.SettingsFragment;
-import android.support.v17.leanback.streamingapp.app.page.StreamingFilmsFragment;
-import android.support.v17.leanback.streamingapp.app.page.StreamingTVFragment;
+import android.support.v17.leanback.streamingapp.app.page.CardsExampleFragment;
 import android.support.v17.leanback.streamingapp.app.search.SearchActivity;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
@@ -16,17 +17,19 @@ import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.PageRow;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.SearchOrbView;
-import android.util.Log;
 import android.view.View;
 
 
 public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragment {
     private static final long HEADER_ID_1 = 1;
-    private static final String HEADER_NAME_1 = "Streaming Films";
+    private static final String HEADER_NAME_1 = "Movies";
     private static final long HEADER_ID_2 = 2;
-    private static final String HEADER_NAME_2 = "Streaming TV";
+    private static final String HEADER_NAME_2 = "Settings";
     private static final long HEADER_ID_3 = 3;
-    private static final String HEADER_NAME_3 = "Settings";
+    private static final String HEADER_NAME_3 = "Infinite List";
+    private static final long HEADER_ID_4 = 4;
+    private static final String HEADER_NAME_4 = "Cards Example";
+
     private BackgroundManager mBackgroundManager;
 
     private ArrayObjectAdapter mRowsAdapter;
@@ -55,12 +58,10 @@ public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragm
         setTitle("Coloc 5815 Parc");
 
         setOnSearchClickedListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-            Log.d("Mokto", "Click search");
-            Intent intent = new Intent(getActivity(), SearchActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -93,6 +94,10 @@ public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragm
         HeaderItem headerItem3 = new HeaderItem(HEADER_ID_3, HEADER_NAME_3);
         PageRow pageRow3 = new PageRow(headerItem3);
         mRowsAdapter.add(pageRow3);
+
+        HeaderItem headerItem4 = new HeaderItem(HEADER_ID_4, HEADER_NAME_4);
+        PageRow pageRow4 = new PageRow(headerItem4);
+        mRowsAdapter.add(pageRow4);
     }
 
     private static class PageRowFragmentFactory extends android.support.v17.leanback.app.BrowseFragment.FragmentFactory {
@@ -108,13 +113,16 @@ public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragm
             mBackgroundManager.setDrawable(null);
 
             if (row.getHeaderItem().getId() == HEADER_ID_1) {
-                return new StreamingFilmsFragment();
+                return new MoviesFragment();
 
             } else if (row.getHeaderItem().getId() == HEADER_ID_2) {
-                return new StreamingTVFragment();
+                return new SettingsFragment();
 
             } else if (row.getHeaderItem().getId() == HEADER_ID_3) {
-                return new SettingsFragment();
+                return new GridTestFragment();
+
+            } else if (row.getHeaderItem().getId() == HEADER_ID_4) {
+                return new CardsExampleFragment();
             }
 
             throw new IllegalArgumentException(String.format("Invalid row %s", rowObj));

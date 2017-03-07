@@ -19,14 +19,9 @@ import android.os.Bundle;
 import android.support.v17.leanback.app.BrowseFragment;
 import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.app.BrowseActivity;
-import android.support.v17.leanback.streamingapp.old.oldapp.oldcards.CardExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.DetailViewExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.olddialog.DialogExampleActivity;
-import android.support.v17.leanback.streamingapp.old.oldapp.oldgrid.GridExampleActivity;
-import android.support.v17.leanback.streamingapp.old.oldapp.oldgrid.VideoGridExampleActivity;
-import android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.MusicExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.VideoExampleActivity;
-import android.support.v17.leanback.streamingapp.old.oldapp.oldpage.PageAndListRowActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.oldsettings.SettingsExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.oldwizard.WizardExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldcards.presenters.CardPresenterSelector;
@@ -118,25 +113,6 @@ public class OldMainFragment extends BrowseFragment {
             Card card = (Card) item;
             int id = card.getId();
             switch (id) {
-                case 0: {
-                    intent = new Intent(getActivity().getBaseContext(),
-                            CardExampleActivity.class);
-                    break;
-                }
-                case 1:
-                    intent = new Intent(getActivity().getBaseContext(),
-                            PageAndListRowActivity.class);
-                    break;
-                case 2: {
-                    intent = new Intent(getActivity().getBaseContext(),
-                            GridExampleActivity.class);
-                    break;
-                }
-                case 3: {
-                    intent = new Intent(getActivity().getBaseContext(),
-                            VideoGridExampleActivity.class);
-                    break;
-                }
                 case 4: {
                     intent = new Intent(getActivity().getBaseContext(),
                             DetailViewExampleActivity.class);
@@ -145,11 +121,6 @@ public class OldMainFragment extends BrowseFragment {
                 case 5: {
                     intent = new Intent(getActivity().getBaseContext(),
                             VideoExampleActivity.class);
-                    break;
-                }
-                case 6: {
-                    intent = new Intent(getActivity().getBaseContext(),
-                            MusicExampleActivity.class);
                     break;
                 }
                 case 7: {

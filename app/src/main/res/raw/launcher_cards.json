@@ -10,34 +10,6 @@
         "description": "Your app"
       },
       {
-        "id": 0,
-        "type": "DEFAULT",
-        "title": "Card Examples",
-        "localImageResource": "thumbnail_example_cards",
-        "description": "Showcase of various card design and layouts"
-      },
-      {
-        "id": 1,
-        "type": "DEFAULT",
-        "title": "Page/Row fragment Examples",
-        "localImageResource": "thumbnail_example_browse",
-        "description": "Showcase usage of page/rows fragment"
-      },
-      {
-        "id": 2,
-        "type": "DEFAULT",
-        "title": "Image Grid Examples",
-        "localImageResource": "thumbnail_example_grid",
-        "description": "Showcase of various images in a vertical grid"
-      },
-      {
-        "id": 3,
-        "type": "DEFAULT",
-        "title": "Video Grid Examples",
-        "localImageResource": "thumbnail_example_grid",
-        "description": "Showcase of various videos in a vertical grid"
-      },
-      {
         "id": 4,
         "type": "DEFAULT",
         "title": "Detail Examples",
@@ -49,13 +21,6 @@
         "type": "DEFAULT",
         "title": "Video consumption Examples",
         "localImageResource": "thumbnail_example_video_consumption",
-        "description": "Showcase of various card design and layouts"
-      },
-      {
-        "id": 6,
-        "type": "DEFAULT",
-        "title": "Music consumption Examples",
-        "localImageResource": "thumbnail_example_music_consumption",
         "description": "Showcase of various card design and layouts"
       },
       {
