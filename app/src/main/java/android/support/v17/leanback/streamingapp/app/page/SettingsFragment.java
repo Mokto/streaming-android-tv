@@ -8,7 +8,7 @@ import android.support.v17.leanback.streamingapp.old.oldapp.oldpage.SettingsIcon
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCardRow;
 import android.support.v17.leanback.streamingapp.utils.OldCardListRow;
-import android.support.v17.leanback.streamingapp.utils.OldUtils;
+import android.support.v17.leanback.streamingapp.utils.Utils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
@@ -40,7 +40,7 @@ public class SettingsFragment extends RowsFragment {
 
     private void loadData() {
         if (isAdded()) {
-            String json = OldUtils.inputStreamToString(getResources().openRawResource(
+            String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.icon_example));
             OldCardRow oldCardRow = new Gson().fromJson(json, OldCardRow.class);
             mRowsAdapter.add(createCardRow(oldCardRow));

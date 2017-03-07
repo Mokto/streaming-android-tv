@@ -20,7 +20,7 @@ import android.support.v17.leanback.app.DetailsFragment;
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldDetailedCard;
 import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.utils.OldCardListRow;
-import android.support.v17.leanback.streamingapp.utils.OldUtils;
+import android.support.v17.leanback.streamingapp.utils.Utils;
 import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCardPresenterSelector;
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.Action;
@@ -64,7 +64,7 @@ public class OldDetailViewExampleFragment extends DetailsFragment implements OnI
     private void setupUi() {
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.
-        String json = OldUtils
+        String json = Utils
                 .inputStreamToString(getResources().openRawResource(R.raw.detail_example));
         OldDetailedCard data = new Gson().fromJson(json, OldDetailedCard.class);
 

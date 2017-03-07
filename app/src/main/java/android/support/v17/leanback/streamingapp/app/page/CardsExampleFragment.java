@@ -8,7 +8,7 @@ import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCard
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCardRow;
 import android.support.v17.leanback.streamingapp.utils.OldCardListRow;
-import android.support.v17.leanback.streamingapp.utils.OldUtils;
+import android.support.v17.leanback.streamingapp.utils.Utils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.OnItemViewClickedListener;
@@ -51,7 +51,7 @@ public class CardsExampleFragment extends RowsFragment {
     }
 
     private void createRows() {
-        String json = OldUtils
+        String json = Utils
                 .inputStreamToString(getResources().openRawResource(R.raw.cards_example));
 
         OldCardRow[] rows = new Gson().fromJson(json, OldCardRow[].class);

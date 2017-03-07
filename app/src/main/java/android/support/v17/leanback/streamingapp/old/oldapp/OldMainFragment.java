@@ -28,7 +28,7 @@ import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCard
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCardRow;
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldMovie;
-import android.support.v17.leanback.streamingapp.utils.OldUtils;
+import android.support.v17.leanback.streamingapp.utils.Utils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
@@ -74,7 +74,7 @@ public class OldMainFragment extends BrowseFragment {
     }
 
     private void createRows() {
-        String json = OldUtils
+        String json = Utils
                 .inputStreamToString(getResources().openRawResource(R.raw.launcher_cards));
         OldCardRow[] rows = new Gson().fromJson(json, OldCardRow[].class);
         for (OldCardRow row : rows) {
@@ -133,7 +133,7 @@ public class OldMainFragment extends BrowseFragment {
                     // Prepare extras which contains the OldMovie and will be passed to the Activity
                     // which is started through the Intent/.
                     Bundle extras = new Bundle();
-                    String json = OldUtils.inputStreamToString(
+                    String json = Utils.inputStreamToString(
                             getResources().openRawResource(R.raw.wizard_example));
                     OldMovie oldMovie = new Gson().fromJson(json, OldMovie.class);
                     extras.putSerializable("oldMovie", oldMovie);

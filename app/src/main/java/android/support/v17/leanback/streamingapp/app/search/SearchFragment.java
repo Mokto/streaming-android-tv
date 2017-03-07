@@ -3,7 +3,7 @@ package android.support.v17.leanback.streamingapp.app.search;
 import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.os.Bundle;
-import android.support.v17.leanback.streamingapp.utils.OldUtils;
+import android.support.v17.leanback.streamingapp.utils.Utils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.ObjectAdapter;
@@ -24,7 +24,7 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
         Log.d("Mokto", "start Activity");
         setSearchResultProvider(this);
 
-        if (!OldUtils.hasPermission(getActivity(), Manifest.permission.RECORD_AUDIO)) {
+        if (!Utils.hasPermission(getActivity(), Manifest.permission.RECORD_AUDIO)) {
             // SpeechRecognitionCallback is not required and if not provided recognition will be handled
             // using internal speech recognizer, in which case you must have RECORD_AUDIO permission
             setSpeechRecognitionCallback(new SpeechRecognitionCallback() {

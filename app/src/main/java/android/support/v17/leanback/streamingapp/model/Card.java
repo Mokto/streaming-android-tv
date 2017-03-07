@@ -1,20 +1,34 @@
 package android.support.v17.leanback.streamingapp.model;
 
-import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
+import android.graphics.Color;
 
 import com.google.gson.annotations.SerializedName;
 
 
 public class Card {
     @SerializedName("id") private int id;
+    @SerializedName("type") private Card.Type type;
     @SerializedName("title") private String title = "";
     @SerializedName("subtitle") private String subtitle = "";
     @SerializedName("localImageResource") private String localImageResource = null;
     @SerializedName("image") private String imageUrl = null;
-    @SerializedName("type") private OldCard.Type type;
+    @SerializedName("footerColor") private String footerColor = null;
 
     public enum Type {
         SINGLE_LINE,
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "id=" + id +
+                ", type=" + type +
+                ", title='" + title + '\'' +
+                ", subtitle='" + subtitle + '\'' +
+                ", localImageResource='" + localImageResource + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", footerColor='" + footerColor + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -23,6 +37,14 @@ public class Card {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Card.Type getType() {
+        return type;
+    }
+
+    public void setType(Card.Type type) {
+        this.type = type;
     }
 
     public String getTitle() {
@@ -57,11 +79,12 @@ public class Card {
         this.imageUrl = imageUrl;
     }
 
-    public OldCard.Type getType() {
-        return type;
+    public int getFooterColor() {
+        if (this.footerColor == null) return -1;
+        return Color.parseColor(this.footerColor);
     }
 
-    public void setType(OldCard.Type type) {
-        this.type = type;
+    public void setFooterColor(String footerColor) {
+        this.footerColor = footerColor;
     }
 }
