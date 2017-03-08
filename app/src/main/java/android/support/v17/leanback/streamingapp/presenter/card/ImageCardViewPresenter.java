@@ -13,9 +13,9 @@ public class ImageCardViewPresenter extends AbstractCardPresenter<ImageCardView>
         super(new ContextThemeWrapper(context, cardThemeResId));
     }
 
-    public ImageCardViewPresenter(Context context) {
-        this(context, R.style.DefaultCardTheme);
-    }
+//    public ImageCardViewPresenter(Context context) {
+//        this(context, R.style.DefaultCardTheme);
+//    }
 
 
     // TODO DELETE THIS

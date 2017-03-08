@@ -28,7 +28,7 @@ import android.support.v17.leanback.widget.ImageCardView;
 public class OldSingleLineCardPresenterOldOld extends OldImageCardViewPresenterOld {
 
     public OldSingleLineCardPresenterOldOld(Context context) {
-        super(context, R.style.SingleLineCardTheme);
+        super(context, R.style.OldSingleLineCardTheme);
     }
 
     @Override public void onBindViewHolder(OldCard oldCard, ImageCardView cardView) {

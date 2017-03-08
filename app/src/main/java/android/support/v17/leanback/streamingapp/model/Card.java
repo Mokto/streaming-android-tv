@@ -1,6 +1,7 @@
 package android.support.v17.leanback.streamingapp.model;
 
 import android.graphics.Color;
+import android.support.v17.leanback.streamingapp.R;
 
 import com.google.gson.annotations.SerializedName;
 

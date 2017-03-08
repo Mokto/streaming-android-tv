@@ -27,10 +27,12 @@ public class CardPresenterSelector extends PresenterSelector {
         Card card = (Card) item;
         Presenter presenter = presenters.get(card.getType());
         if (presenter == null) {
-            Log.w("Mokto", card.toString());
             switch (card.getType()) {
                 case SINGLE_LINE:
                     presenter = new SingleLineCardPresenter(mContext, R.style.SingleLineCardTheme);
+                    break;
+                case SINGLE_LINE_CENTERED:
+                    presenter = new SingleLineCardPresenter(mContext, R.style.SingleLineCenteredCardTheme);
                     break;
 //                case VIDEO_GRID:
 //                    presenter = new OldVideoCardViewPresenterOldOld(mContext, R.style.VideoGridCardTheme);
