@@ -6,7 +6,7 @@ import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.model.Card;
 import android.support.v17.leanback.widget.ImageCardView;
 
-public class SingleLineCardPresenter extends ImageCardViewPresenter {
+public class SingleLineCardPresenter extends ImageCardPresenter {
     public SingleLineCardPresenter(Context context, int styleId) {
         super(context, styleId);
     }

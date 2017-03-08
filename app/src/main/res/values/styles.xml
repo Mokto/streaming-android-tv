@@ -23,18 +23,15 @@
     </style>
 
     <!--SINGLE LINE-->
-    <style name="SingleLineCardTheme" parent="Theme.Leanback">
+    <style name="SingleLineSquareCardTheme" parent="Theme.Leanback">
         <item name="imageCardViewStyle">@style/SingleLineCardStyle</item>
         <item name="imageCardViewImageStyle">@style/SingleLineCardImageStyle</item>
         <item name="imageCardViewInfoAreaStyle">@style/SingleLineCardInfoAreaStyle</item>
     </style>
 
     <!--SINGLE LINE CENTER-->
-    <style name="SingleLineCenteredCardTheme" parent="Theme.Leanback">
-        <item name="imageCardViewStyle">@style/SingleLineCardStyle</item>
+    <style name="SingleLineSquareCenteredCardTheme" parent="SingleLineSquareCardTheme">
         <item name="imageCardViewTitleStyle">@style/SingleLineCardCenteredTitleStyle</item>
-        <item name="imageCardViewImageStyle">@style/SingleLineCardImageStyle</item>
-        <item name="imageCardViewInfoAreaStyle">@style/SingleLineCardInfoAreaStyle</item>
     </style>
 
 

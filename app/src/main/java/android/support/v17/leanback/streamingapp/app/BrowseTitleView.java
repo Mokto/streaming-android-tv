@@ -1,7 +1,9 @@
 package android.support.v17.leanback.streamingapp.app;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v17.leanback.streamingapp.R;
+import android.support.v17.leanback.widget.SearchOrbView;
 import android.support.v17.leanback.widget.TitleViewAdapter;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -15,12 +17,17 @@ import android.widget.TextView;
 public class BrowseTitleView extends RelativeLayout implements TitleViewAdapter.Provider {
     private final TextView mTitleView;
     private final View mAnalogClockView;
-    private final View mSearchOrbView;
+    private final SearchOrbView mSearchOrbView;
 
     private final TitleViewAdapter mTitleViewAdapter = new TitleViewAdapter() {
         @Override
         public View getSearchAffordanceView() {
             return mSearchOrbView;
+        }
+
+        @Override
+        public void setSearchAffordanceColors(SearchOrbView.Colors colors) {
+            mSearchOrbView.setOrbColors(colors);
         }
 
         @Override
@@ -61,7 +68,7 @@ public class BrowseTitleView extends RelativeLayout implements TitleViewAdapter.
         View root  = LayoutInflater.from(context).inflate(R.layout.custom_titleview, this);
         mTitleView = (TextView) root.findViewById(R.id.title_tv);
         mAnalogClockView = root.findViewById(R.id.clock);
-        mSearchOrbView = root.findViewById(R.id.search_orb);
+        mSearchOrbView = (SearchOrbView) root.findViewById(R.id.search_orb);
     }
 
     public void setTitle(CharSequence title) {

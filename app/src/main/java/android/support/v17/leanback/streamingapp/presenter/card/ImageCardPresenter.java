@@ -1,19 +1,18 @@
 package android.support.v17.leanback.streamingapp.presenter.card;
 
 import android.content.Context;
-import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.model.Card;
 import android.support.v17.leanback.widget.ImageCardView;
 import android.view.ContextThemeWrapper;
 
 import com.squareup.picasso.Picasso;
 
-public class ImageCardViewPresenter extends AbstractCardPresenter<ImageCardView> {
-    public ImageCardViewPresenter(Context context, int cardThemeResId) {
+public class ImageCardPresenter extends AbstractCardPresenter<ImageCardView> {
+    public ImageCardPresenter(Context context, int cardThemeResId) {
         super(new ContextThemeWrapper(context, cardThemeResId));
     }
 
-//    public ImageCardViewPresenter(Context context) {
+//    public ImageCardPresenter(Context context) {
 //        this(context, R.style.DefaultCardTheme);
 //    }
 

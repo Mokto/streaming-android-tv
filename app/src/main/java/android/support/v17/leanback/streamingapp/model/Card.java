@@ -16,8 +16,8 @@ public class Card {
     @SerializedName("footerColor") private String footerColor = null;
 
     public enum Type {
-        SINGLE_LINE,
-        SINGLE_LINE_CENTERED,
+        SINGLE_LINE_SQUARE,
+        SINGLE_LINE_SQUARE_CENTERED,
     }
 
     public String getId() {
