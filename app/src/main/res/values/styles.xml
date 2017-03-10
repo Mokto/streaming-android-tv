@@ -23,26 +23,38 @@
     </style>
 
     <!--SINGLE LINE-->
-    <style name="SingleLineSquareCardTheme" parent="Theme.Leanback">
+    <style name="SquareSingleLineCardTheme" parent="Theme.Leanback">
+        <item name="imageCardViewImageStyle">@style/SquareStyle</item>
         <item name="imageCardViewStyle">@style/SingleLineCardStyle</item>
-        <item name="imageCardViewImageStyle">@style/SingleLineCardImageStyle</item>
         <item name="imageCardViewInfoAreaStyle">@style/SingleLineCardInfoAreaStyle</item>
     </style>
 
     <!--SINGLE LINE CENTER-->
-    <style name="SingleLineSquareCenteredCardTheme" parent="SingleLineSquareCardTheme">
-        <item name="imageCardViewTitleStyle">@style/SingleLineCardCenteredTitleStyle</item>
+    <style name="SquareSingleLineCenteredCardTheme" parent="SquareSingleLineCardTheme">
+        <item name="imageCardViewTitleStyle">@style/CenteredStyle</item>
+    </style>
+
+    <!--MOVIE THEME-->
+    <style name="MovieCardTheme" parent="Theme.Leanback">
+        <item name="imageCardViewImageStyle">@style/MovieCardImageSizeStyle</item>
+    </style>
+
+
+
+    <style name="MovieCardImageSizeStyle" parent="Widget.Leanback.ImageCardView.ImageStyle">
+        <item name="android:layout_width">@dimen/movie_image_card_width</item>
+        <item name="android:layout_height">@dimen/movie_image_card_height</item>
     </style>
 
 
     <style name="SingleLineCardStyle" parent="DefaultCardStyle">
         <item name="lbImageCardViewType">Title</item>
     </style>
-    <style name="SingleLineCardCenteredTitleStyle" parent="Widget.Leanback.ImageCardView.TitleStyle">
+    <style name="CenteredStyle" parent="Widget.Leanback.ImageCardView.TitleStyle">
         <item name="android:textAlignment">center</item>
         <item name="android:gravity">center</item>
     </style>
-    <style name="SingleLineCardImageStyle" parent="Widget.Leanback.ImageCardView.ImageStyle">
+    <style name="SquareStyle" parent="Widget.Leanback.ImageCardView.ImageStyle">
         <item name="android:layout_width">@dimen/square_image_card_width</item>
         <item name="android:layout_height">@dimen/square_image_card_height</item>
     </style>
@@ -59,7 +71,10 @@
 
 
 
-
+    <style name="MovieCardSimpleTheme" parent="Theme.Leanback">
+        <item name="imageCardViewStyle">@style/MovieCardTitleOnlyStyle</item>
+        <item name="imageCardViewImageStyle">@style/MovieCardImageStyle</item>
+    </style>
 
     <!-- Various oldMovie oldCard styles. Used in oldCards example. -->
     <style name="MovieCardBadgeStyle" parent="Widget.Leanback.ImageCardView.BadgeStyle">
@@ -93,10 +108,7 @@
     </style>
 
     <!-- Theme corresponding to the MovieCardSimpleStyle -->
-    <style name="MovieCardSimpleTheme" parent="Theme.Leanback">
-        <item name="imageCardViewStyle">@style/MovieCardTitleOnlyStyle</item>
-        <item name="imageCardViewImageStyle">@style/MovieCardImageStyle</item>
-    </style>
+
 
     <style name="MovieCardCompleteStyle" parent="MovieCardTitleOnlyStyle">
         <item name="lbImageCardViewType">Title|Content|IconOnLeft</item>

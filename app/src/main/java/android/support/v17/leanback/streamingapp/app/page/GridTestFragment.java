@@ -86,30 +86,30 @@ public class GridTestFragment extends android.support.v17.leanback.streamingapp.
         Api api = new Api();
 
         this.isLoading = true;
-        api.getTrending(page, PER_PAGE, this.getActivity().getBaseContext(),
-                new Response.Listener<JSONArray>()
-                {
-                    @Override
-                    public void onResponse(JSONArray response) {
-
-                        isLoading = false;
-                        page++;
-
-                        List<OldCard> oldCards = new Gson().fromJson(response.toString(), new TypeToken<List<OldCard>>(){}.getType());
-
-                        mAdapter.addAll(mAdapter.size(), oldCards);
-
-                        getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
-                    }
-                },
-                new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        isLoading = false;
-                        Log.e("Mokto", error.toString());
-                    }
-                });
+//        api.getTrending(page, PER_PAGE, this.getActivity().getBaseContext(),
+//                new Response.Listener<JSONArray>()
+//                {
+//                    @Override
+//                    public void onResponse(JSONArray response) {
+//
+//                        isLoading = false;
+//                        page++;
+//
+//                        List<OldCard> oldCards = new Gson().fromJson(response.toString(), new TypeToken<List<OldCard>>(){}.getType());
+//
+//                        mAdapter.addAll(mAdapter.size(), oldCards);
+//
+//                        getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+//                    }
+//                },
+//                new Response.ErrorListener()
+//                {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        isLoading = false;
+//                        Log.e("Mokto", error.toString());
+//                    }
+//                });
 
     }
 

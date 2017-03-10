@@ -1,5 +1,6 @@
 package android.support.v17.leanback.streamingapp.model;
 
+import com.google.common.collect.ImmutableBiMap;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -10,6 +11,13 @@ public class CardRow {
     @SerializedName("id") private String id;
     @SerializedName("title") private String title;
     @SerializedName("cards") private List<Card> cards;
+
+    static public ImmutableBiMap<Long, String> ids = new ImmutableBiMap.Builder<Long, String>()
+            .put(0L, "trakt-lists")
+            .put(1L, "trakt-genres")
+            .put(2L, "recommendations")
+            .put(3L, "watchlist")
+            .build();
 
     public String getId() {
         return id;

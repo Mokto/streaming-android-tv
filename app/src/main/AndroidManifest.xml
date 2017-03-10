@@ -47,6 +47,15 @@
 
 
         <activity
+            android:name="android.support.v17.leanback.streamingapp.app.infinitegrid.InfiniteGridActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
+
+
+
+
+
+        <activity
             android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldwizard.WizardExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackWizard"/>

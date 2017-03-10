@@ -25,8 +25,6 @@ public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragm
     private static final String HEADER_NAME_1 = "Movies";
     private static final long HEADER_ID_2 = 2;
     private static final String HEADER_NAME_2 = "Settings";
-    private static final long HEADER_ID_3 = 3;
-    private static final String HEADER_NAME_3 = "Infinite List";
     private static final long HEADER_ID_4 = 4;
     private static final String HEADER_NAME_4 = "Cards Example";
 
@@ -51,17 +49,13 @@ public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragm
         setBrandColor(getResources().getColor(R.color.primary_dark));
         setSearchAffordanceColors(new SearchOrbView.Colors(getResources().getColor(R.color.accent)));
 
-//        mBrowseFragment.setSearchAffordanceColor(getResources().getColor(R.color.primary_dark));
-//        SearchOrbView.Colors colors = new SearchOrbView.Colors(10, 10, 10);
-//        setSearchAffordanceColors(colors);
-
         setTitle("Coloc 5815 Parc");
 
         setOnSearchClickedListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), SearchActivity.class);
-                startActivity(intent);
+            Intent intent = new Intent(getActivity(), SearchActivity.class);
+            startActivity(intent);
             }
         });
 
@@ -91,10 +85,6 @@ public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragm
         PageRow pageRow2 = new PageRow(headerItem2);
         mRowsAdapter.add(pageRow2);
 
-        HeaderItem headerItem3 = new HeaderItem(HEADER_ID_3, HEADER_NAME_3);
-        PageRow pageRow3 = new PageRow(headerItem3);
-        mRowsAdapter.add(pageRow3);
-
         HeaderItem headerItem4 = new HeaderItem(HEADER_ID_4, HEADER_NAME_4);
         PageRow pageRow4 = new PageRow(headerItem4);
         mRowsAdapter.add(pageRow4);
@@ -117,9 +107,6 @@ public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragm
 
             } else if (row.getHeaderItem().getId() == HEADER_ID_2) {
                 return new SettingsFragment();
-
-            } else if (row.getHeaderItem().getId() == HEADER_ID_3) {
-                return new GridTestFragment();
 
             } else if (row.getHeaderItem().getId() == HEADER_ID_4) {
                 return new CardsExampleFragment();

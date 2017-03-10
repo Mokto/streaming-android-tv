@@ -1,9 +1,10 @@
 package android.support.v17.leanback.streamingapp.model;
 
 import android.graphics.Color;
-import android.support.v17.leanback.streamingapp.R;
 
 import com.google.gson.annotations.SerializedName;
+
+import org.json.JSONObject;
 
 
 public class Card {
@@ -14,10 +15,12 @@ public class Card {
     @SerializedName("localImageResource") private String localImageResource = null;
     @SerializedName("image") private String imageUrl = null;
     @SerializedName("footerColor") private String footerColor = null;
+    @SerializedName("params") private String params = null;
 
     public enum Type {
-        SINGLE_LINE_SQUARE,
-        SINGLE_LINE_SQUARE_CENTERED,
+        SQUARE_SINGLE_LINE,
+        SQUARE_SINGLE_LINE_CENTERED,
+        MOVIE,
     }
 
     public String getId() {
@@ -75,5 +78,13 @@ public class Card {
 
     public void setFooterColor(String footerColor) {
         this.footerColor = footerColor;
+    }
+
+    public String getParams() {
+        return params;
+    }
+
+    public void setParams(String params) {
+        this.params = params;
     }
 }

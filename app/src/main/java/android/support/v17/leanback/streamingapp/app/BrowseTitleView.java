@@ -6,6 +6,7 @@ import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.widget.SearchOrbView;
 import android.support.v17.leanback.widget.TitleViewAdapter;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -68,6 +69,7 @@ public class BrowseTitleView extends RelativeLayout implements TitleViewAdapter.
         View root  = LayoutInflater.from(context).inflate(R.layout.custom_titleview, this);
         mTitleView = (TextView) root.findViewById(R.id.title_tv);
         mAnalogClockView = root.findViewById(R.id.clock);
+        Log.d("Mokto", "PLouf");
         mSearchOrbView = (SearchOrbView) root.findViewById(R.id.search_orb);
     }
 

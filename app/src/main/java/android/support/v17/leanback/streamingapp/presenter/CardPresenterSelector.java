@@ -3,10 +3,9 @@ package android.support.v17.leanback.streamingapp.presenter;
 import android.content.Context;
 import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.model.Card;
-import android.support.v17.leanback.streamingapp.presenter.card.SingleLineCardPresenter;
+import android.support.v17.leanback.streamingapp.presenter.card.ImageCardPresenter;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
-import android.util.Log;
 
 import java.util.HashMap;
 
@@ -28,11 +27,14 @@ public class CardPresenterSelector extends PresenterSelector {
         Presenter presenter = presenters.get(card.getType());
         if (presenter == null) {
             switch (card.getType()) {
-                case SINGLE_LINE_SQUARE:
-                    presenter = new SingleLineCardPresenter(mContext, R.style.SingleLineSquareCardTheme);
+                case SQUARE_SINGLE_LINE:
+                    presenter = new ImageCardPresenter(mContext, R.style.SquareSingleLineCardTheme);
                     break;
-                case SINGLE_LINE_SQUARE_CENTERED:
-                    presenter = new SingleLineCardPresenter(mContext, R.style.SingleLineSquareCenteredCardTheme);
+                case SQUARE_SINGLE_LINE_CENTERED:
+                    presenter = new ImageCardPresenter(mContext, R.style.SquareSingleLineCenteredCardTheme);
+                    break;
+                case MOVIE:
+                    presenter = new ImageCardPresenter(mContext, R.style.MovieCardTheme);
                     break;
 //                case VIDEO_GRID:
 //                    presenter = new OldVideoCardViewPresenterOldOld(mContext, R.style.VideoGridCardTheme);

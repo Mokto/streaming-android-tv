@@ -1,141 +1,146 @@
 [
   {
+    "id": "trakt-lists",
     "title": "Streaming lists",
     "cards": [
       {
-        "id": "trending",
-        "type": "SINGLE_LINE_SQUARE",
+        "id": "movies",
+        "params": "{"type": "trending"}",
+        "type": "SQUARE_SINGLE_LINE",
         "title": "Trending",
         "localImageResource": "category_action"
       },
       {
-        "id": "animation",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Popular (All time)",
+        "id": "/movies/popular",
+        "type": "SQUARE_SINGLE_LINE",
+        "title": "Popular",
         "localImageResource": "category_animation"
       },
       {
-        "id": "adventure",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Watched (last 7 days)",
+        "id": "/movies/watched/monthly",
+        "type": "SQUARE_SINGLE_LINE",
+        "title": "Watched (last month)",
         "localImageResource": "category_classics"
       },
       {
-        "id": "comedy",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Box office",
-        "localImageResource": "category_comedy"
-      },
-      {
-        "id": "crime",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Crime",
-        "localImageResource": "category_crime"
-      },
-      {
-        "id": "documentary",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Documentary",
-        "localImageResource": "category_documentary"
-      },
-      {
-        "id": "drama",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Drama",
-        "localImageResource": "category_drama"
-      },
-      {
-        "id": "anime",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Anime",
+        "id": "/movies/watched/all",
+        "type": "SQUARE_SINGLE_LINE",
+        "title": "Watched (All time)",
         "localImageResource": "category_classics"
       },
       {
-        "id": "disaster",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Disaster",
+        "id": "/movies/watched/monthly",
+        "type": "SQUARE_SINGLE_LINE",
+        "title": "Watched (last month)",
         "localImageResource": "category_classics"
       },
       {
-        "id": "eastern",
-        "type": "SINGLE_LINE_SQUARE",
-        "title": "Eastern",
+        "id": "/movies/watched/yearly",
+        "type": "SQUARE_SINGLE_LINE",
+        "title": "Watched (last year)",
         "localImageResource": "category_classics"
       }
     ]
   },
   {
+    "id": "trakt-genres",
     "title": "Streaming genres",
     "cards": [
       {
         "id": "action",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Action",
         "footerColor": "#dd004e",
         "localImageResource": "category_action"
       },
       {
         "id": "animation",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Animation",
         "footerColor": "#c2185b",
         "localImageResource": "category_animation"
       },
       {
         "id": "adventure",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Adventure",
         "footerColor": "#9c27b0",
         "localImageResource": "category_classics"
       },
       {
         "id": "comedy",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Comedy",
         "footerColor": "#cf4900",
         "localImageResource": "category_comedy"
       },
       {
         "id": "crime",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Crime",
         "footerColor": "#3f51b5",
         "localImageResource": "category_crime"
       },
       {
         "id": "documentary",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Documentary",
         "footerColor": "#02639b",
         "localImageResource": "category_documentary"
       },
       {
         "id": "drama",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Drama",
         "footerColor": "#2a56c6",
         "localImageResource": "category_drama"
       },
       {
         "id": "anime",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Anime",
         "footerColor": "#333333",
         "localImageResource": "category_classics"
       },
       {
         "id": "disaster",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Disaster",
         "footerColor": "#333333",
         "localImageResource": "category_classics"
       },
       {
         "id": "eastern",
-        "type": "SINGLE_LINE_SQUARE_CENTERED",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
         "title": "Eastern",
         "footerColor": "#333333",
         "localImageResource": "category_classics"
+      }
+    ]
+  },
+  {
+    "id": "recommendations",
+    "title": "Recommendations",
+    "cards": [
+      {
+        "id": "action",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
+        "title": "Action",
+        "footerColor": "#dd004e",
+        "localImageResource": "category_action"
+      }
+    ]
+  },
+  {
+    "id": "watchlist",
+    "title": "Watchlist",
+    "cards": [
+      {
+        "id": "action",
+        "type": "SQUARE_SINGLE_LINE_CENTERED",
+        "title": "Action",
+        "footerColor": "#dd004e",
+        "localImageResource": "category_action"
       }
     ]
   }
