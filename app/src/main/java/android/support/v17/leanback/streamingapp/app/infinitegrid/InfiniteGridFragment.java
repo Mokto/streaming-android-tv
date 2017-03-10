@@ -1,10 +1,13 @@
 package android.support.v17.leanback.streamingapp.app.infinitegrid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v17.leanback.app.VerticalGridFragment;
 import android.support.v17.leanback.streamingapp.api.Api;
 import android.support.v17.leanback.streamingapp.api.IO;
+import android.support.v17.leanback.streamingapp.app.search.SearchActivity;
 import android.support.v17.leanback.streamingapp.model.Card;
+import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.OldDetailViewExampleActivity;
 import android.support.v17.leanback.streamingapp.presenter.CardPresenterSelector;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.FocusHighlight;
@@ -14,7 +17,9 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v17.leanback.widget.VerticalGridPresenter;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -50,7 +55,19 @@ public class InfiniteGridFragment extends VerticalGridFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setOnSearchClickedListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         Bundle bundle = getActivity().getIntent().getExtras();
+
+        setTitle(bundle.getString("title"));
+
         id = bundle.getString("id");
         try {
             params = new JSONObject(bundle.getString("params"));
@@ -58,7 +75,6 @@ public class InfiniteGridFragment extends VerticalGridFragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         setupAdapter();
         loadData();
     }
@@ -81,9 +97,17 @@ public class InfiniteGridFragment extends VerticalGridFragment {
                     RowPresenter.ViewHolder rowViewHolder,
                     Row row) {
                 Card oldCard = (Card) item;
-                Toast.makeText(getActivity(),
-                        "Clicked on "+ oldCard.getTitle(),
-                        Toast.LENGTH_SHORT).show();
+
+
+                Intent intent = new Intent(getActivity().getBaseContext(), OldDetailViewExampleActivity.class);
+//                intent.putExtra("id", card.getId());
+
+                Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity())
+                        .toBundle();
+                startActivity(intent, bundle);
+//                Toast.makeText(getActivity(),
+//                        "Clicked on "+ oldCard.getTitle(),
+//                        Toast.LENGTH_SHORT).show();
             }
         });
 

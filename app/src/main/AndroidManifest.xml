@@ -2,7 +2,7 @@
     package="android.support.v17.leanback.streamingapp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="23" />
+    <!--<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="23" />-->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
@@ -38,18 +38,24 @@
         <activity
             android:name="android.support.v17.leanback.streamingapp.app.BrowseActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
+            android:theme="@style/Theme.App.Leanback.SearchTitleView"/>
 
         <activity
             android:name="android.support.v17.leanback.streamingapp.app.search.SearchActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
+            android:theme="@style/Theme.App.Leanback.SearchTitleView"/>
 
 
         <activity
             android:name="android.support.v17.leanback.streamingapp.app.infinitegrid.InfiniteGridActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"/>
+            android:theme="@style/Theme.App.Leanback.SearchTitleView"/>
+
+        <activity
+            android:name="android.support.v17.leanback.streamingapp.app.detail.DetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App.LeanbackDetails"/>
+
 
 
 
@@ -71,18 +77,18 @@
             android:name="android.support.v17.leanback.streamingapp.old.oldapp.olddetails.OldDetailViewExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackDetails"/>
-        <activity
-            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldcards.CardExampleActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Example.LeanbackBrowse"/>
-        <activity
-            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldgrid.GridExampleActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>
-        <activity
-            android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldgrid.VideoGridExampleActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>
+        <!--<activity-->
+            <!--android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldcards.CardExampleActivity"-->
+            <!--android:exported="true"-->
+            <!--android:theme="@style/Theme.Example.LeanbackBrowse"/>-->
+        <!--<activity-->
+            <!--android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldgrid.GridExampleActivity"-->
+            <!--android:exported="true"-->
+            <!--android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>-->
+        <!--<activity-->
+            <!--android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldgrid.VideoGridExampleActivity"-->
+            <!--android:exported="true"-->
+            <!--android:theme="@style/Theme.Example.LeanbackVerticalGrid"/>-->
         <activity
             android:name="android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.VideoExampleActivity"
             android:exported="true"

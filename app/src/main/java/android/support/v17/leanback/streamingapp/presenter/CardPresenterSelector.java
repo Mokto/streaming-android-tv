@@ -33,6 +33,9 @@ public class CardPresenterSelector extends PresenterSelector {
                 case SQUARE_SINGLE_LINE_CENTERED:
                     presenter = new ImageCardPresenter(mContext, R.style.SquareSingleLineCenteredCardTheme);
                     break;
+                case SQUARE_TWO_LINE:
+                    presenter = new ImageCardPresenter(mContext, R.style.SquareTwoLineCardTheme);
+                    break;
                 case MOVIE:
                     presenter = new ImageCardPresenter(mContext, R.style.MovieCardTheme);
                     break;

@@ -20,6 +20,7 @@ public class Card {
     public enum Type {
         SQUARE_SINGLE_LINE,
         SQUARE_SINGLE_LINE_CENTERED,
+        SQUARE_TWO_LINE,
         MOVIE,
     }
 

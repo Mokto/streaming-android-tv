@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.support.v17.leanback.app.BrowseFragment;
 import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.app.BrowseActivity;
+import android.support.v17.leanback.streamingapp.app.detail.DetailActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.OldDetailViewExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.olddialog.DialogExampleActivity;
 import android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.VideoExampleActivity;
@@ -60,8 +61,8 @@ public class OldMainFragment extends BrowseFragment {
 
     private void loadMainPage() {
         Intent intent = new Intent(getActivity().getBaseContext(),
-                // CardExampleActivity.class);
-                BrowseActivity.class);
+//                 BrowseActivity.class);
+                DetailActivity.class);
         if (intent != null) {
             getActivity().startActivityForResult(intent, 1);
         }

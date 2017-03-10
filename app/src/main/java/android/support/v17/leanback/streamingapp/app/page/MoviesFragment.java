@@ -44,6 +44,7 @@ public class MoviesFragment extends RowsFragment {
                 Intent intent = new Intent(getActivity().getBaseContext(), InfiniteGridActivity.class);
                 intent.putExtra("id", card.getId());
                 intent.putExtra("params", card.getParams());
+                intent.putExtra("title", card.getTitle());
 
                 Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity())
                         .toBundle();

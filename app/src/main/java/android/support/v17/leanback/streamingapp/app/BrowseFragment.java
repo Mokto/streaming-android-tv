@@ -46,8 +46,8 @@ public class BrowseFragment extends android.support.v17.leanback.app.BrowseFragm
     private void setupUi() {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
-        setBrandColor(getResources().getColor(R.color.primary_dark));
-        setSearchAffordanceColors(new SearchOrbView.Colors(getResources().getColor(R.color.accent)));
+//        setBrandColor(getResources().getColor(R.color.primary_dark));
+//        setSearchAffordanceColors(new SearchOrbView.Colors(getResources().getColor(R.color.accent)));
 
         setTitle("Coloc 5815 Parc");
 

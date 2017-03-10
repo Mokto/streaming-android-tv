@@ -25,6 +25,7 @@
     <color name="divider">#BDBDBD</color>
 
     <color name="default_card_footer_background_color">#37474F</color>
+    <color name="app_background">#222222</color>
 
 
     <color name="background_gradient_start">#FFFFFF</color>
@@ -34,7 +35,7 @@
     <color name="search_opaque">#ffaa3f</color>
     <color name="search_color">#FFEB3B</color>
     <color name="search_bright_color">#FFEB3B</color>
-    <color name="search_icon_color">#222222</color>
+    <color name="search_icon_color">#FFFFFF</color>
     <!--<color name="accent">#80D3FB</color>-->
     <color name="settings_background">#00695C</color>
 
