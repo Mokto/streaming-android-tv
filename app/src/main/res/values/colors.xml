@@ -27,6 +27,8 @@
     <color name="default_card_footer_background_color">#37474F</color>
     <color name="app_background">#222222</color>
 
+    <color name="primary_alpha">#A6303F9F</color>
+
 
     <color name="background_gradient_start">#FFFFFF</color>
     <color name="background_gradient_end">#DDDDDD</color>

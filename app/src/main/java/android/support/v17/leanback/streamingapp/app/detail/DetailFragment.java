@@ -52,7 +52,6 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
         OldDetailedCard data = new Gson().fromJson(json, OldDetailedCard.class);
 
         // Setup fragment
-        setTitle(getString(R.string.detail_view_title));
 
         FullWidthDetailsOverviewRowPresenter rowPresenter = new FullWidthDetailsOverviewRowPresenter(
                 new OldDetailsDescriptionPresenter(getActivity())) {
@@ -64,11 +63,13 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
                 View actionsView = viewHolder.view.
                         findViewById(R.id.details_overview_actions_background);
                 actionsView.setBackgroundColor(getActivity().getResources().
-                        getColor(R.color.detail_view_actionbar_background));
+                        getColor(R.color.primary_dark));
+
 
                 View detailsView = viewHolder.view.findViewById(R.id.details_frame);
                 detailsView.setBackgroundColor(
-                        getResources().getColor(R.color.detail_view_background));
+                        getResources().getColor(R.color.primary_alpha));
+
                 return viewHolder;
             }
         };
