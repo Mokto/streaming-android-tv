@@ -1,9 +1,13 @@
 package android.support.v17.leanback.streamingapp.app.detail;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v17.leanback.app.DetailsFragment;
 import android.support.v17.leanback.streamingapp.R;
+import android.support.v17.leanback.streamingapp.api.IO;
+import android.support.v17.leanback.streamingapp.app.loading.SpinnerFragment;
 import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.OldDetailsDescriptionPresenter;
 import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCardPresenterSelector;
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
@@ -30,12 +34,17 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import org.json.JSONObject;
+
+import io.socket.client.Ack;
+
 public class DetailFragment extends DetailsFragment implements OnItemViewClickedListener, OnItemViewSelectedListener {
 
     public static final String TRANSITION_NAME = "t_for_transition";
     public static final String EXTRA_CARD = "card";
 
     private ArrayObjectAdapter mRowsAdapter;
+    private OldDetailedCard data;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,9 +56,6 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
     private void setupUi() {
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.
-        String json = Utils
-                .inputStreamToString(getResources().openRawResource(R.raw.detail_example));
-        OldDetailedCard data = new Gson().fromJson(json, OldDetailedCard.class);
 
         // Setup fragment
 
@@ -89,6 +95,32 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
         rowPresenterSelector.addClassPresenter(OldCardListRow.class, shadowDisabledRowPresenter);
         rowPresenterSelector.addClassPresenter(ListRow.class, new ListRowPresenter());
         mRowsAdapter = new ArrayObjectAdapter(rowPresenterSelector);
+
+        this.getData();
+        // Do some background process here.
+        // It just waits 5 sec in this Tutorial
+    }
+
+    private void getData() {
+        final SpinnerFragment mSpinnerFragment = new SpinnerFragment();
+        getFragmentManager().beginTransaction().add(R.id.detailsFragment, mSpinnerFragment).commit();
+
+        IO.emit("movie", "moana-2016", new Ack() {
+            @Override
+            public void call(final Object... args) {
+                getActivity().runOnUiThread(new Runnable() {
+                    public void run() {
+                        getFragmentManager().beginTransaction().remove(mSpinnerFragment).commit();
+
+                        data = new Gson().fromJson(((JSONObject) args[0]).toString(), OldDetailedCard.class);
+                        loadData(data);
+                    }
+                });
+            }
+        });
+    }
+
+    private void loadData(OldDetailedCard data) {// @drawable/background_canyon
 
         // Setup action and detail row.
         DetailsOverviewRow detailsOverview = new DetailsOverviewRow(data);

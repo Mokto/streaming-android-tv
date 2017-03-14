@@ -18,6 +18,8 @@ public class DetailedCard {
     @SerializedName("characters") private OldCard[] mCharacters = null;
     @SerializedName("recommended") private OldCard[] mRecommended = null;
     @SerializedName("year") private int mYear = 0;
+    @SerializedName("poster") private String poster = null;
+    @SerializedName("background") private String background = null;
 
 
     public String getPrice() {
@@ -55,5 +57,21 @@ public class DetailedCard {
     public int getLocalImageResourceId(Context context) {
         return context.getResources()
                 .getIdentifier(getLocalImageResource(), "drawable", context.getPackageName());
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    public String getBackground() {
+        return background;
+    }
+
+    public void setBackground(String background) {
+        this.background = background;
     }
 }

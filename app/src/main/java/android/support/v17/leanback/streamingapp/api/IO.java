@@ -17,6 +17,9 @@ public class IO {
     public Socket socket;
 
 
+    public static Emitter emit(final String event, final String data, final Ack callback) {
+        return getInstance().socket.emit(event, data, callback);
+    }
     public static Emitter emit(final String event, final JSONObject params, final Ack callback) {
         return getInstance().socket.emit(event, params, callback);
     }
