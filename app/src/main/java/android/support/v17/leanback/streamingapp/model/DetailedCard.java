@@ -5,6 +5,8 @@ import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Arrays;
+
 /**
  * Created by theo on 17-03-13.
  */
@@ -15,8 +17,8 @@ public class DetailedCard {
     @SerializedName("text") private String mText = "";
     @SerializedName("localImageResource") private String mLocalImageResource = null;
     @SerializedName("price") private String mPrice = null;
-    @SerializedName("characters") private OldCard[] mCharacters = null;
-    @SerializedName("recommended") private OldCard[] mRecommended = null;
+    @SerializedName("characters") private Card[] mCharacters = null;
+    @SerializedName("recommended") private Card[] mRecommended = null;
     @SerializedName("year") private int mYear = 0;
     @SerializedName("poster") private String poster = null;
     @SerializedName("background") private String background = null;
@@ -46,11 +48,11 @@ public class DetailedCard {
         return mTitle;
     }
 
-    public OldCard[] getCharacters() {
+    public Card[] getCharacters() {
         return mCharacters;
     }
 
-    public OldCard[] getRecommended() {
+    public Card[] getRecommended() {
         return mRecommended;
     }
 
@@ -73,5 +75,21 @@ public class DetailedCard {
 
     public void setBackground(String background) {
         this.background = background;
+    }
+
+    @Override
+    public String toString() {
+        return "DetailedCard{" +
+                "mTitle='" + mTitle + '\'' +
+                ", mDescription='" + mDescription + '\'' +
+                ", mText='" + mText + '\'' +
+                ", mLocalImageResource='" + mLocalImageResource + '\'' +
+                ", mPrice='" + mPrice + '\'' +
+                ", mCharacters=" + Arrays.toString(mCharacters) +
+                ", mRecommended=" + Arrays.toString(mRecommended) +
+                ", mYear=" + mYear +
+                ", poster='" + poster + '\'' +
+                ", background='" + background + '\'' +
+                '}';
     }
 }

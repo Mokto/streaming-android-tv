@@ -16,8 +16,8 @@ package android.support.v17.leanback.streamingapp.old.oldapp.oldwizard;
 
 import android.os.Bundle;
 import android.support.v17.leanback.app.GuidedStepFragment;
-import android.support.v17.leanback.streamingapp.old.oldmodels.OldMovie;
 import android.support.v17.leanback.streamingapp.R;
+import android.support.v17.leanback.streamingapp.old.oldmodels.OldMovie;
 
 /**
  * A base class which provides all it's implementations with a method #getWizardActivity(). It also

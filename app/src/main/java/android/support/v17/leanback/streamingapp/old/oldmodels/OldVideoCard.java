@@ -15,9 +15,9 @@
 package android.support.v17.leanback.streamingapp.old.oldmodels;
 
 
-import com.google.gson.annotations.SerializedName;
-
 import android.support.v17.leanback.streamingapp.R;
+
+import com.google.gson.annotations.SerializedName;
 
 /**
  * The video card data structure used to hold the fields of each video card fetched from the

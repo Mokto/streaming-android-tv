@@ -5,18 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v17.leanback.app.BackgroundManager;
-import android.support.v17.leanback.streamingapp.R;
-import android.support.v17.leanback.streamingapp.app.page.GridTestFragment;
+import android.support.v17.leanback.streamingapp.app.page.CardsExampleFragment;
 import android.support.v17.leanback.streamingapp.app.page.MoviesFragment;
 import android.support.v17.leanback.streamingapp.app.page.SettingsFragment;
-import android.support.v17.leanback.streamingapp.app.page.CardsExampleFragment;
 import android.support.v17.leanback.streamingapp.app.search.SearchActivity;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.PageRow;
 import android.support.v17.leanback.widget.Row;
-import android.support.v17.leanback.widget.SearchOrbView;
 import android.view.View;
 
 

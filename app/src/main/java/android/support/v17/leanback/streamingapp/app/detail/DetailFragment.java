@@ -1,19 +1,17 @@
 package android.support.v17.leanback.streamingapp.app.detail;
 
-import android.os.AsyncTask;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.support.v17.leanback.app.DetailsFragment;
 import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.api.IO;
 import android.support.v17.leanback.streamingapp.app.loading.SpinnerFragment;
-import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.OldDetailsDescriptionPresenter;
-import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCardPresenterSelector;
-import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
-import android.support.v17.leanback.streamingapp.old.oldmodels.OldDetailedCard;
+import android.support.v17.leanback.streamingapp.model.Card;
+import android.support.v17.leanback.streamingapp.model.DetailedCard;
+import android.support.v17.leanback.streamingapp.presenter.CardPresenterSelector;
 import android.support.v17.leanback.streamingapp.utils.OldCardListRow;
-import android.support.v17.leanback.streamingapp.utils.Utils;
+import android.support.v17.leanback.streamingapp.utils.PicassoBackgroundManager;
 import android.support.v17.leanback.widget.Action;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ClassPresenterSelector;
@@ -33,10 +31,15 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
+import java.io.IOException;
+
 import io.socket.client.Ack;
+
+//import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCardPresenterSelector;
 
 public class DetailFragment extends DetailsFragment implements OnItemViewClickedListener, OnItemViewSelectedListener {
 
@@ -44,13 +47,22 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
     public static final String EXTRA_CARD = "card";
 
     private ArrayObjectAdapter mRowsAdapter;
-    private OldDetailedCard data;
+    private DetailedCard detailedCard;
+    private DetailsOverviewRow detailsOverview;
+    private Bitmap background = null;
+    private static PicassoBackgroundManager picassoBackgroundManager = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupUi();
         setupEventListeners();
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        picassoBackgroundManager = new PicassoBackgroundManager(getActivity());
     }
 
     private void setupUi() {
@@ -60,7 +72,7 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
         // Setup fragment
 
         FullWidthDetailsOverviewRowPresenter rowPresenter = new FullWidthDetailsOverviewRowPresenter(
-                new OldDetailsDescriptionPresenter(getActivity())) {
+                new DetailDescriptionPresenter(getActivity())) {
 
             @Override
             protected RowPresenter.ViewHolder createRowViewHolder(ViewGroup parent) {
@@ -108,46 +120,69 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
         IO.emit("movie", "moana-2016", new Ack() {
             @Override
             public void call(final Object... args) {
+
+                detailedCard = new Gson().fromJson(((JSONObject) args[0]).toString(), DetailedCard.class);
+                detailsOverview = new DetailsOverviewRow(detailedCard);
+                if(detailedCard.getPoster() != null) {
+                    try {
+                        Bitmap poster = Picasso.with(getActivity()).load(detailedCard.getPoster()).get();
+                        detailsOverview.setImageBitmap(getActivity(), poster);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if(detailedCard.getBackground() != null) {
+                    picassoBackgroundManager.updateBackgroundWithDelay(detailedCard.getBackground());
+                }
+
+
+
                 getActivity().runOnUiThread(new Runnable() {
                     public void run() {
                         getFragmentManager().beginTransaction().remove(mSpinnerFragment).commit();
-
-                        data = new Gson().fromJson(((JSONObject) args[0]).toString(), OldDetailedCard.class);
-                        loadData(data);
+                        loadData();
                     }
                 });
             }
         });
     }
 
-    private void loadData(OldDetailedCard data) {// @drawable/background_canyon
+    private void loadData() {// @drawable/background_canyon
 
         // Setup action and detail row.
-        DetailsOverviewRow detailsOverview = new DetailsOverviewRow(data);
-        int imageResId = data.getLocalImageResourceId(getActivity());
 
-        Bundle extras = getActivity().getIntent().getExtras();
-        if (extras != null && extras.containsKey(EXTRA_CARD)) {
-            imageResId = extras.getInt(EXTRA_CARD, imageResId);
-        }
-        detailsOverview.setImageDrawable(getResources().getDrawable(imageResId, null));
+
+//        detailsOverview.
+
+
+//        int imageResId = data.getLocalImageResourceId(getActivity());
+//
+//        Bundle extras = getActivity().getIntent().getExtras();
+//        if (extras != null && extras.containsKey(EXTRA_CARD)) {
+//            imageResId = extras.getInt(EXTRA_CARD, imageResId);
+//        }
+//        detailsOverview.setImageDrawable(getResources().getDrawable(imageResId, null));
+
         ArrayObjectAdapter actionAdapter = new ArrayObjectAdapter();
-        actionAdapter.add(new Action(1, getString(R.string.action_buy) + data.getPrice()));
+        actionAdapter.add(new Action(1, getString(R.string.action_buy) + detailedCard.getPrice()));
         actionAdapter.add(new Action(2, getString(R.string.action_wishlist)));
         actionAdapter.add(new Action(3, getString(R.string.action_related)));
         detailsOverview.setActionsAdapter(actionAdapter);
         mRowsAdapter.add(detailsOverview);
 
+        HeaderItem header;
+        ArrayObjectAdapter listRowAdapter;
+
         // Setup related row.
-        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(
-                new OldCardPresenterSelector(getActivity()));
-        for (OldCard characterOldCard : data.getCharacters()) listRowAdapter.add(characterOldCard);
-        HeaderItem header = new HeaderItem(0, getString(R.string.header_related));
-        mRowsAdapter.add(new OldCardListRow(header, listRowAdapter, null));
+//        listRowAdapter = new ArrayObjectAdapter(
+//                new CardPresenterSelector(getActivity()));
+//        for (Card characterOldCard : data.getCharacters()) listRowAdapter.add(characterOldCard);
+//        header = new HeaderItem(0, getString(R.string.header_related));
+//        mRowsAdapter.add(new OldCardListRow(header, listRowAdapter, null));
 
         // Setup recommended row.
-        listRowAdapter = new ArrayObjectAdapter(new OldCardPresenterSelector(getActivity()));
-        for (OldCard oldCard : data.getRecommended()) listRowAdapter.add(oldCard);
+        listRowAdapter = new ArrayObjectAdapter(new CardPresenterSelector(getActivity()));
+        for (Card oldCard : detailedCard.getRecommended()) listRowAdapter.add(oldCard);
         header = new HeaderItem(1, getString(R.string.header_recommended));
         mRowsAdapter.add(new ListRow(header, listRowAdapter));
 

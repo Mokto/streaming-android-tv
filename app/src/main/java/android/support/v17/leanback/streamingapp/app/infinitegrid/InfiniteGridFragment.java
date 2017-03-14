@@ -3,7 +3,6 @@ package android.support.v17.leanback.streamingapp.app.infinitegrid;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v17.leanback.app.VerticalGridFragment;
-import android.support.v17.leanback.streamingapp.api.Api;
 import android.support.v17.leanback.streamingapp.api.IO;
 import android.support.v17.leanback.streamingapp.app.search.SearchActivity;
 import android.support.v17.leanback.streamingapp.model.Card;
@@ -20,10 +19,7 @@ import android.support.v17.leanback.widget.VerticalGridPresenter;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -31,9 +27,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import io.socket.client.Ack;
 

@@ -12,17 +12,7 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v17.leanback.widget.VerticalGridPresenter;
-import android.util.Log;
 import android.widget.Toast;
-
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONArray;
-
-import java.util.List;
 
 public class GridTestFragment extends android.support.v17.leanback.streamingapp.old.oldapp.oldpage.GridFragment {
     private static final int COLUMNS = 6;

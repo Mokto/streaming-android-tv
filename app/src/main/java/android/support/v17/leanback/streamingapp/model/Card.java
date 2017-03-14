@@ -4,8 +4,6 @@ import android.graphics.Color;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.json.JSONObject;
-
 
 public class Card {
     @SerializedName("id") private String id;
