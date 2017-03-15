@@ -1,7 +1,6 @@
 package android.support.v17.leanback.streamingapp.app.page;
 
 import android.os.Bundle;
-import android.support.v17.leanback.streamingapp.api.Api;
 import android.support.v17.leanback.streamingapp.old.oldcards.presenters.OldCardPresenterSelector;
 import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
@@ -73,7 +72,6 @@ public class GridTestFragment extends android.support.v17.leanback.streamingapp.
     }
 
     private void loadData() {
-        Api api = new Api();
 
         this.isLoading = true;
 //        api.getTrending(page, PER_PAGE, this.getActivity().getBaseContext(),

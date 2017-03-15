@@ -1,7 +1,6 @@
 package android.support.v17.leanback.streamingapp.app;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.widget.SearchOrbView;
 import android.support.v17.leanback.widget.TitleViewAdapter;

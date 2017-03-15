@@ -1,7 +1,6 @@
 package android.support.v17.leanback.streamingapp.model;
 
 import android.content.Context;
-import android.support.v17.leanback.streamingapp.old.oldmodels.OldCard;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -22,6 +21,7 @@ public class DetailedCard {
     @SerializedName("year") private int mYear = 0;
     @SerializedName("poster") private String poster = null;
     @SerializedName("background") private String background = null;
+    @SerializedName("imdbId") private String imdbId = "";
 
 
     public String getPrice() {
@@ -91,5 +91,77 @@ public class DetailedCard {
                 ", poster='" + poster + '\'' +
                 ", background='" + background + '\'' +
                 '}';
+    }
+
+    public String getImdbId() {
+        return imdbId;
+    }
+
+    public void setImdbId(String imdbId) {
+        this.imdbId = imdbId;
+    }
+
+    public String getmTitle() {
+        return mTitle;
+    }
+
+    public void setmTitle(String mTitle) {
+        this.mTitle = mTitle;
+    }
+
+    public String getmDescription() {
+        return mDescription;
+    }
+
+    public void setmDescription(String mDescription) {
+        this.mDescription = mDescription;
+    }
+
+    public String getmText() {
+        return mText;
+    }
+
+    public void setmText(String mText) {
+        this.mText = mText;
+    }
+
+    public String getmLocalImageResource() {
+        return mLocalImageResource;
+    }
+
+    public void setmLocalImageResource(String mLocalImageResource) {
+        this.mLocalImageResource = mLocalImageResource;
+    }
+
+    public String getmPrice() {
+        return mPrice;
+    }
+
+    public void setmPrice(String mPrice) {
+        this.mPrice = mPrice;
+    }
+
+    public Card[] getmCharacters() {
+        return mCharacters;
+    }
+
+    public void setmCharacters(Card[] mCharacters) {
+        this.mCharacters = mCharacters;
+    }
+
+    public Card[] getmRecommended() {
+        return mRecommended;
+    }
+
+    public void setmRecommended(Card[] mRecommended) {
+        this.mRecommended = mRecommended;
+    }
+
+    public int getmYear() {
+        return mYear;
+    }
+
+    public void setmYear(int mYear) {
+        this.mYear = mYear;
     }
 }

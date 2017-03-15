@@ -25,6 +25,7 @@ import android.support.v17.leanback.widget.PlaybackControlsRowPresenter;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -32,7 +33,7 @@ import android.view.SurfaceView;
 public class VideoConsumptionExampleFragment extends PlaybackOverlayFragment implements
         OnItemViewClickedListener, MediaPlayerGlue.OnMediaStateChangeListener {
 
-    private static final String URL = "http://techslides.com/demos/sample-videos/small.mp4";
+    private static String URL = "http://techslides.com/demos/sample-videos/small.mp4";
 
 //    private static final String URL = "http://ihfav1.alld.io/dl/108jexd9ef1/Passengers 2016 HD-TS V.2 x264 AC3-CPG.mkv.mp4";
     // http://74i1bv.alld.io/dl/108j7u118fc/Focus.2015.720p.10bit.BluRay.x265-YSTeam.mkv
@@ -43,6 +44,9 @@ public class VideoConsumptionExampleFragment extends PlaybackOverlayFragment imp
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle bundle = getActivity().getIntent().getExtras();
+        URL = bundle.getString("url");
 
         mGlue = new VideoMediaPlayerGlue(getActivity(), this) {
 
@@ -122,7 +126,7 @@ public class VideoConsumptionExampleFragment extends PlaybackOverlayFragment imp
         if (mGlue.isMediaPlaying()) {
             boolean isVisibleBehind = getActivity().requestVisibleBehind(true);
             boolean isPictureInPictureMode = VideoExampleActivity.supportsPictureInPicture(
-                    getContext()) && getActivity().isInPictureInPictureMode();
+                    getActivity().getBaseContext()) && getActivity().isInPictureInPictureMode();
             if (!isVisibleBehind && !isPictureInPictureMode) {
                 mGlue.pausePlayback();
             }

@@ -63,6 +63,7 @@ public class OldMainFragment extends BrowseFragment {
         Intent intent = new Intent(getActivity().getBaseContext(),
 //                 BrowseActivity.class);
                 DetailActivity.class);
+        intent.putExtra("id", "moana-2016");
         if (intent != null) {
             getActivity().startActivityForResult(intent, 1);
         }

@@ -1,16 +1,18 @@
 package android.support.v17.leanback.streamingapp.app.detail;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.v17.leanback.app.BackgroundManager;
 import android.support.v17.leanback.app.DetailsFragment;
 import android.support.v17.leanback.streamingapp.R;
 import android.support.v17.leanback.streamingapp.api.IO;
-import android.support.v17.leanback.streamingapp.app.loading.SpinnerFragment;
+import android.support.v17.leanback.streamingapp.app.search.SearchActivity;
+import android.support.v17.leanback.streamingapp.old.oldapp.oldmedia.VideoExampleActivity;
+import android.support.v17.leanback.streamingapp.utils.SpinnerFragment;
 import android.support.v17.leanback.streamingapp.model.Card;
 import android.support.v17.leanback.streamingapp.model.DetailedCard;
 import android.support.v17.leanback.streamingapp.presenter.CardPresenterSelector;
-import android.support.v17.leanback.streamingapp.utils.OldCardListRow;
 import android.support.v17.leanback.streamingapp.utils.PicassoBackgroundManager;
 import android.support.v17.leanback.widget.Action;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
@@ -46,6 +48,8 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
     public static final String TRANSITION_NAME = "t_for_transition";
     public static final String EXTRA_CARD = "card";
 
+    SpinnerFragment mSpinnerFragment = new SpinnerFragment();
+    private String id;
     private ArrayObjectAdapter mRowsAdapter;
     private DetailedCard detailedCard;
     private DetailsOverviewRow detailsOverview;
@@ -55,6 +59,10 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle bundle = getActivity().getIntent().getExtras();
+        id = bundle.getString("id");
+
         setupUi();
         setupEventListeners();
     }
@@ -91,6 +99,7 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
                 return viewHolder;
             }
         };
+        BackgroundManager.getInstance(getActivity()).setColor(getResources().getColor(R.color.app_background));
 
         FullWidthDetailsOverviewSharedElementHelper mHelper = new FullWidthDetailsOverviewSharedElementHelper();
         mHelper.setSharedElementEnterTransition(getActivity(), TRANSITION_NAME);
@@ -104,20 +113,17 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
         // Setup PresenterSelector to distinguish between the different rows.
         ClassPresenterSelector rowPresenterSelector = new ClassPresenterSelector();
         rowPresenterSelector.addClassPresenter(DetailsOverviewRow.class, rowPresenter);
-        rowPresenterSelector.addClassPresenter(OldCardListRow.class, shadowDisabledRowPresenter);
+//        rowPresenterSelector.addClassPresenter(OldCardListRow.class, shadowDisabledRowPresenter);
         rowPresenterSelector.addClassPresenter(ListRow.class, new ListRowPresenter());
         mRowsAdapter = new ArrayObjectAdapter(rowPresenterSelector);
 
         this.getData();
-        // Do some background process here.
-        // It just waits 5 sec in this Tutorial
     }
 
     private void getData() {
-        final SpinnerFragment mSpinnerFragment = new SpinnerFragment();
-        getFragmentManager().beginTransaction().add(R.id.detailsFragment, mSpinnerFragment).commit();
+        showSpinner();
 
-        IO.emit("movie", "moana-2016", new Ack() {
+        IO.emit("movie", id, new Ack() {
             @Override
             public void call(final Object... args) {
 
@@ -139,7 +145,7 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
 
                 getActivity().runOnUiThread(new Runnable() {
                     public void run() {
-                        getFragmentManager().beginTransaction().remove(mSpinnerFragment).commit();
+                        hideSpinner();
                         loadData();
                     }
                 });
@@ -164,9 +170,10 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
 //        detailsOverview.setImageDrawable(getResources().getDrawable(imageResId, null));
 
         ArrayObjectAdapter actionAdapter = new ArrayObjectAdapter();
-        actionAdapter.add(new Action(1, getString(R.string.action_buy) + detailedCard.getPrice()));
-        actionAdapter.add(new Action(2, getString(R.string.action_wishlist)));
-        actionAdapter.add(new Action(3, getString(R.string.action_related)));
+        actionAdapter.add(new Action(1, "Read"));
+        actionAdapter.add(new Action(5, "Related"));
+//        actionAdapter.add(new Action(2, getString(R.string.action_wishlist)));
+//        actionAdapter.add(new Action(3, getString(R.string.action_related)));
         detailsOverview.setActionsAdapter(actionAdapter);
         mRowsAdapter.add(detailsOverview);
 
@@ -187,12 +194,13 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
         mRowsAdapter.add(new ListRow(header, listRowAdapter));
 
         setAdapter(mRowsAdapter);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startEntranceTransition();
-            }
-        }, 500);
+        startEntranceTransition();
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        }, 500);
     }
 
     private void setupEventListeners() {
@@ -205,8 +213,29 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
                               RowPresenter.ViewHolder rowViewHolder, Row row) {
         if (!(item instanceof Action)) return;
         Action action = (Action) item;
-        if (action.getId() == 3) {
+        if (action.getId() == 5) {
             setSelectedPosition(1);
+
+        } else if(action.getId() == 1) {
+            showSpinner();
+
+            IO.emit("stream", detailedCard.getImdbId(), new Ack() {
+                @Override
+                public void call(final Object... args) {
+
+                    getActivity().runOnUiThread(new Runnable() {
+                        public void run() {
+                            hideSpinner();
+
+
+                            Intent intent = new Intent(getActivity(), VideoExampleActivity.class);
+                            intent.putExtra("url", (String) args[0]);
+                            startActivity(intent);
+
+                        }
+                    });
+                }
+            });
         } else {
             Toast.makeText(getActivity(), getString(R.string.action_cicked), Toast.LENGTH_LONG)
                     .show();
@@ -217,11 +246,18 @@ public class DetailFragment extends DetailsFragment implements OnItemViewClicked
     public void onItemSelected(Presenter.ViewHolder itemViewHolder, Object item,
                                RowPresenter.ViewHolder rowViewHolder, Row row) {
         if (mRowsAdapter.indexOf(row) > 0) {
-            int backgroundColor = getResources().getColor(R.color.detail_view_related_background);
+            int backgroundColor = getResources().getColor(R.color.accent);
             getView().setBackgroundColor(backgroundColor);
         } else {
             getView().setBackground(null);
         }
+    }
+
+    private void showSpinner() {
+        getFragmentManager().beginTransaction().replace(R.id.detailsFragment, mSpinnerFragment).commit();
+    }
+    private void hideSpinner() {
+        getFragmentManager().beginTransaction().remove(mSpinnerFragment).commit();
     }
 }
 

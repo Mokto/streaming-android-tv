@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v17.leanback.app.VerticalGridFragment;
 import android.support.v17.leanback.streamingapp.api.IO;
+import android.support.v17.leanback.streamingapp.app.detail.DetailActivity;
 import android.support.v17.leanback.streamingapp.app.search.SearchActivity;
 import android.support.v17.leanback.streamingapp.model.Card;
 import android.support.v17.leanback.streamingapp.old.oldapp.olddetails.OldDetailViewExampleActivity;
@@ -90,18 +91,15 @@ public class InfiniteGridFragment extends VerticalGridFragment {
                     Object item,
                     RowPresenter.ViewHolder rowViewHolder,
                     Row row) {
-                Card oldCard = (Card) item;
+                Card card = (Card) item;
 
 
-                Intent intent = new Intent(getActivity().getBaseContext(), OldDetailViewExampleActivity.class);
-//                intent.putExtra("id", card.getId());
+                Intent intent = new Intent(getActivity().getBaseContext(), DetailActivity.class);
+                intent.putExtra("id", card.getId());
 
                 Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity())
                         .toBundle();
                 startActivity(intent, bundle);
-//                Toast.makeText(getActivity(),
-//                        "Clicked on "+ oldCard.getTitle(),
-//                        Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -1,4 +1,4 @@
-package android.support.v17.leanback.streamingapp.app.loading;
+package android.support.v17.leanback.streamingapp.utils;
 
 import android.app.Fragment;
 import android.os.Bundle;
